@@ -1,6 +1,6 @@
 //
-//  RANGRApp.swift
-//  RANGR
+//  swiftRANGRApp.swift
+//  swiftRANGR
 //
 //  Created by Steven Nguyen on 3/13/22.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct RANGRApp: App {
+struct swiftRANGRApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

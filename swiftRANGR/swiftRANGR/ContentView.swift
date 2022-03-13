@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  RANGR
+//  swiftRANGR
 //
 //  Created by Steven Nguyen on 3/13/22.
 //
