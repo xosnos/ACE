@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EF7ACC127E1701F00EDEC70 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EF7ACC027E1701F00EDEC70 /* Info.plist */; };
 		A43F953527DE847400EA100B /* swiftRANGRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F953427DE847400EA100B /* swiftRANGRApp.swift */; };
 		A43F953727DE847400EA100B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F953627DE847400EA100B /* ContentView.swift */; };
 		A43F953927DE847500EA100B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A43F953827DE847500EA100B /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EF7ACC027E1701F00EDEC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A43F953127DE847400EA100B /* swiftRANGR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftRANGR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43F953427DE847400EA100B /* swiftRANGRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftRANGRApp.swift; sourceTree = "<group>"; };
 		A43F953627DE847400EA100B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				A43F953427DE847400EA100B /* swiftRANGRApp.swift */,
 				A43F953627DE847400EA100B /* ContentView.swift */,
+				2EF7ACC027E1701F00EDEC70 /* Info.plist */,
 				A43F953827DE847500EA100B /* Assets.xcassets */,
 				A43F953A27DE847500EA100B /* Preview Content */,
 			);
@@ -127,6 +130,7 @@
 			files = (
 				A43F953C27DE847500EA100B /* Preview Assets.xcassets in Resources */,
 				A43F953927DE847500EA100B /* Assets.xcassets in Resources */,
+				2EF7ACC127E1701F00EDEC70 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +276,8 @@
 				DEVELOPMENT_TEAM = W469A8F2E3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To record video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "To save video";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +307,8 @@
 				DEVELOPMENT_TEAM = W469A8F2E3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To record video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "To save video";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
