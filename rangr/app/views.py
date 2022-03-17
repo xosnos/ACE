@@ -16,7 +16,7 @@ def get_user_last_shot(request, user_id):
     if request.method != 'GET':
         return HttpResponse(status=404)
     cursor = connection.cursor()
-    query = """SELECT launch_angle, launch_speed, hang_time, distance, club
+    query = """SELECT launch_angle, launch_speed, hang_time, distance, club, time
             FROM users U, shots S
             WHERE S.user_id = %s
             ORDER BY time DESC
@@ -46,6 +46,7 @@ def post_shot(request):
     if request.FILES.get("video"):
         content = request.FILES['video']
         filename = str(user_id) + str(time.time()) + ".mov"
+        fname = filename
         fs = FileSystemStorage()
         filename = fs.save(filename, content)
         # videourl = fs.url(filename)
@@ -53,7 +54,8 @@ def post_shot(request):
         return JsonResponse({})
 
     # get shot data for given video url
-    data = get_shot_metrics(f"rangr/media/{filename}", hand)
+    #data = get_shot_metrics(f"~/ACE/rangr/media/11647555259.3231792.mov/", hand)
+    data = get_shot_metrics(f"{settings.MEDIA_ROOT}/{fname}", hand)
     launch_speed = float(data['launch_speed'])
     launch_angle = float(data['launch_angle'])
     distance = float(data['distance'])
