@@ -5,7 +5,7 @@ import matplotlib
 import math
 
 # fix issue with saving plots...
-matplotlib.use('Agg')
+# matplotlib.use('Agg')
 
 
 def show_ball_path(filename):
