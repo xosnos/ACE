@@ -14,7 +14,6 @@ Database is called rangrdb. Has tables `users` and `shots`
 
 
 `shots` table looks like:
-Colons can be used to align columns.
 
 |user_id (int)  | launch_angle (decimal)| launch_speed (decimal)| hang_time (decimal)| distance (decimal)| shot_id (int) | time (timestamp)             |
 |:-------------:|:---------------------:|:---------------------:|:------------------:|:-----------------:|:-------------:|:----------------------------:|
