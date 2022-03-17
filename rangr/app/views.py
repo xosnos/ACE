@@ -9,8 +9,6 @@ from django.db import connection
 
 import numpy as np
 import cv2
-import matplotlib.pyplot as plt
-import matplotlib
 import math
 
 # get the most recent shot taken by the user
