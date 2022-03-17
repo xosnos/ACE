@@ -5,7 +5,7 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.db import connection
-from cv import get_shot_metrics
+from cv_rangr import get_shot_metrics
 
 # get the most recent shot taken by the user
 def get_user_last_shot(request, user_id):
