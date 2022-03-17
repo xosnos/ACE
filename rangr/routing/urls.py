@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('get_test/', views.get_test, name='get_test'),
     path('post_test/', views.post_test, name='post_test'),
+    path('get_shot_data/', views.get_shot_data, name='get_shot_data'),
+    path('post_shot_data/', views.post_shot_data, name='post_shot_data'),
 ]
