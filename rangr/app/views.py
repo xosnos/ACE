@@ -42,3 +42,42 @@ def post_test(request):
 
     return JsonResponse({})
 # Create your views here.
+def get_shot_data(request):
+    if request.method != 'GET':
+        return HttpResponse(status=404)
+    cursor = connection.cursor()
+    # this syntax is probably wrong
+    #user_id = request.GET.get("user_id")
+    # I think I should the user_id a query parameter. So different url for a given user
+    user_id = 1
+    query = """SELECT launch_angle, launch_speed, hang_time, distance, shot_id
+            FROM users U, shots S
+            WHERE S.user_id = %s
+            ORDER BY time DESC
+            LIMIT 1;"""
+
+    cursor.execute(query,[user_id])
+    rows = cursor.fetchall()
+
+    response = {}
+    response['data'] = rows
+    return JsonResponse(response)
+
+@csrf_exempt
+def post_shot_data(request):
+
+    # it won't look like this in the end, we'll get the data from CV stuff, not the request
+
+    if request.method != 'POST':
+        return HttpResponse(status=404)
+    json_data = json.loads(request.body)
+    user_id = json_data['user_id']
+    launch_angle = json_data['launch_angle']
+    launch_speed = json_data['launch_speed']
+    hang_time = json_data['hang_time']
+    distance = json_data['distance']
+    cursor = connection.cursor()
+    query = """INSERT INTO shots (user_id, launch_angle, launch_speed, hang_time, distance)
+            VALUES (%s, %s, %s, %s, %s);"""
+    cursor.execute(query, (user_id, launch_angle, launch_speed, hang_time, distance))
+    return JsonResponse({})
