@@ -10,12 +10,26 @@ import SwiftUI
 struct ShotsLogView: View {
     @ObservedObject var store = ShotMetricStore.shared
     var body: some View {
-        List(store.shotMetrics.indices, id: \.self) { index in
-            ShotMetricRow(shotMetric: store.shotMetrics[index])
-        }.listStyle(.plain)
-            .refreshable {
+        NavigationView {
+            List {
+                ForEach(store.shotMetrics.indices, id: \.self) {
+                    ShotMetricRow(shotMetric: store.shotMetrics[$0])
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
+                }
+            }.refreshable {
                 store.getShotMetrics(nil)
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Shot Log")
+                }
+            }
+            .task {
+                store.getShotMetrics(nil)
+            }
+        }
     }
 }
 
