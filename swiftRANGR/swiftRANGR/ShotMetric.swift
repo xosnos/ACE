@@ -11,5 +11,5 @@ struct ShotMetric {
     var hangTime: String?
     var distance: String?
     var club: String?
-//    var timeStamp: String?
+    var timeStamp: String?
 }

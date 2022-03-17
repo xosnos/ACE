@@ -51,8 +51,8 @@ final class ShotMetricStore: ObservableObject  {
                             launchSpeed: shotMetricEntry[1],
                             hangTime: shotMetricEntry[2],
                             distance: shotMetricEntry[3],
-                            club: shotMetricEntry[4]))
-//                            timeStamp: shotMetricEntry[5]))
+                            club: shotMetricEntry[4],
+                            timeStamp: shotMetricEntry[5]))
                     } else {
                         print("GET: Received unexpected number of fields: \(shotMetricEntry.count) instead of \(self.nFields).")
                     }

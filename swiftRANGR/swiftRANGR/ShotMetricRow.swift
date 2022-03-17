@@ -11,9 +11,16 @@ struct ShotMetricRow: View {
     var shotMetric: ShotMetric
     var body: some View {
         VStack(alignment: .leading) {
-//            if let timeStamp = shotMetric.timeStamp {
-//                Text(timeStamp).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
-//            }
+            HStack {
+                if let timeStamp = shotMetric.timeStamp,
+                   let club = shotMetric.club {
+                    Text(timeStamp)
+                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+                    Spacer()
+                    Text("Club: " + club)
+                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+                }
+            }
             HStack {
                 if let launchAngle = shotMetric.launchAngle,
                    let hangTime = shotMetric.hangTime {
