@@ -7,20 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2EF7ACC127E1701F00EDEC70 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EF7ACC027E1701F00EDEC70 /* Info.plist */; };
 		A43F953527DE847400EA100B /* swiftRANGRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F953427DE847400EA100B /* swiftRANGRApp.swift */; };
-		A43F953727DE847400EA100B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F953627DE847400EA100B /* ContentView.swift */; };
+		A43F953727DE847400EA100B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F953627DE847400EA100B /* MainView.swift */; };
 		A43F953927DE847500EA100B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A43F953827DE847500EA100B /* Assets.xcassets */; };
 		A43F953C27DE847500EA100B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A43F953B27DE847500EA100B /* Preview Assets.xcassets */; };
+		A4E0F2B827E2DD6C00039A78 /* ShotsLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E0F2B727E2DD6C00039A78 /* ShotsLogView.swift */; };
+		A4E0F2BA27E2DDAB00039A78 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E0F2B927E2DDAB00039A78 /* HomeView.swift */; };
+		A4E0F2BC27E2E27000039A78 /* ShotMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E0F2BB27E2E27000039A78 /* ShotMetric.swift */; };
+		A4E0F2BE27E2E33200039A78 /* ShotMetricStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E0F2BD27E2E33200039A78 /* ShotMetricStore.swift */; };
+		A4E0F2C027E2E5C900039A78 /* ShotMetricRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E0F2BF27E2E5C900039A78 /* ShotMetricRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2EF7ACC027E1701F00EDEC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A43F953127DE847400EA100B /* swiftRANGR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftRANGR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43F953427DE847400EA100B /* swiftRANGRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftRANGRApp.swift; sourceTree = "<group>"; };
-		A43F953627DE847400EA100B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A43F953627DE847400EA100B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A43F953827DE847500EA100B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A43F953B27DE847500EA100B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A4E0F2B727E2DD6C00039A78 /* ShotsLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotsLogView.swift; sourceTree = "<group>"; };
+		A4E0F2B927E2DDAB00039A78 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A4E0F2BB27E2E27000039A78 /* ShotMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotMetric.swift; sourceTree = "<group>"; };
+		A4E0F2BD27E2E33200039A78 /* ShotMetricStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotMetricStore.swift; sourceTree = "<group>"; };
+		A4E0F2BF27E2E5C900039A78 /* ShotMetricRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotMetricRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +62,14 @@
 			isa = PBXGroup;
 			children = (
 				A43F953427DE847400EA100B /* swiftRANGRApp.swift */,
-				A43F953627DE847400EA100B /* ContentView.swift */,
-				2EF7ACC027E1701F00EDEC70 /* Info.plist */,
+				A43F953627DE847400EA100B /* MainView.swift */,
 				A43F953827DE847500EA100B /* Assets.xcassets */,
 				A43F953A27DE847500EA100B /* Preview Content */,
+				A4E0F2B727E2DD6C00039A78 /* ShotsLogView.swift */,
+				A4E0F2B927E2DDAB00039A78 /* HomeView.swift */,
+				A4E0F2BB27E2E27000039A78 /* ShotMetric.swift */,
+				A4E0F2BD27E2E33200039A78 /* ShotMetricStore.swift */,
+				A4E0F2BF27E2E5C900039A78 /* ShotMetricRow.swift */,
 			);
 			path = swiftRANGR;
 			sourceTree = "<group>";
@@ -130,7 +142,6 @@
 			files = (
 				A43F953C27DE847500EA100B /* Preview Assets.xcassets in Resources */,
 				A43F953927DE847500EA100B /* Assets.xcassets in Resources */,
-				2EF7ACC127E1701F00EDEC70 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A43F953727DE847400EA100B /* ContentView.swift in Sources */,
+				A43F953727DE847400EA100B /* MainView.swift in Sources */,
+				A4E0F2BE27E2E33200039A78 /* ShotMetricStore.swift in Sources */,
+				A4E0F2C027E2E5C900039A78 /* ShotMetricRow.swift in Sources */,
+				A4E0F2BA27E2DDAB00039A78 /* HomeView.swift in Sources */,
+				A4E0F2B827E2DD6C00039A78 /* ShotsLogView.swift in Sources */,
 				A43F953527DE847400EA100B /* swiftRANGRApp.swift in Sources */,
+				A4E0F2BC27E2E27000039A78 /* ShotMetric.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,13 +292,14 @@
 				DEVELOPMENT_TEAM = W469A8F2E3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "To record video";
+				INFOPLIST_KEY_NSCameraUsageDescription = "To use camera";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "To save video";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +309,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,13 +324,14 @@
 				DEVELOPMENT_TEAM = W469A8F2E3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "To record video";
+				INFOPLIST_KEY_NSCameraUsageDescription = "To use camera";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "To save video";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,7 +341,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
