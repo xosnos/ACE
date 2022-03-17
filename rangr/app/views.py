@@ -42,14 +42,14 @@ def post_test(request):
 
     return JsonResponse({})
 # Create your views here.
-def get_shot_data(request):
+def get_shot_data(request, user_id):
     if request.method != 'GET':
         return HttpResponse(status=404)
     cursor = connection.cursor()
+    print("DEBUG: ", user_id)
     # this syntax is probably wrong
     #user_id = request.GET.get("user_id")
     # I think I should the user_id a query parameter. So different url for a given user
-    user_id = 1
     query = """SELECT launch_angle, launch_speed, hang_time, distance, shot_id
             FROM users U, shots S
             WHERE S.user_id = %s
