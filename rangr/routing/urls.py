@@ -19,8 +19,6 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('get_test/', views.get_test, name='get_test'),
-    path('post_test/', views.post_test, name='post_test'),
-    path('get_shot_data/<int:user_id>/', views.get_shot_data, name='get_shot_data'),
-    path('post_shot_data/', views.post_shot_data, name='post_shot_data'),
+    path('get_user_last_shot/<int:user_id>/', views.get_user_last_shot, name='get_user_last_shot'),
+    path('post_shot/', views.post_shot, name='post_shot'),
 ]

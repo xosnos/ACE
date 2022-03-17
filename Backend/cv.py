@@ -105,7 +105,7 @@ def get_ball_points(filename, hand):
     # for i in range(len(xs)):
     #     print(xs[i], ys[i])
     # plot the ball path if we found at least 20 contours
-    if len(xs) > 20:
+    if len(xs) > 20 and hand == 'right':
         # look for a series of 3 points where y is increasing
         for i in range(len(ys) - 3):
             if ys[i] < ys[i+1] and ys[i+1] < ys[i+2] and xs[i] < xs[i+1] and xs[i+1] < xs[i+2]:
@@ -114,7 +114,15 @@ def get_ball_points(filename, hand):
                 ys = ys[i:i+3]
                 radii = radii[i:i+3]
                 break
-
+    if len(xs) > 20 and hand == 'left':
+        # look for a series of 3 points where y is increasing
+        for i in range(len(ys) - 3):
+            if ys[i] < ys[i+1] and ys[i+1] < ys[i+2] and xs[i] > xs[i+1] and xs[i+1] > xs[i+2]:
+                # we found the first point
+                xs = xs[i:i+3]
+                ys = ys[i:i+3]
+                radii = radii[i:i+3]
+                break
     # if we couldn't find three consecutive points, loop for 2 consecutive 
     # increasing points moving in the correct direction based on the hand
     if len(xs) > 20 and hand == 'right':
@@ -139,11 +147,11 @@ def get_ball_points(filename, hand):
     if len(xs) > 20:
         # print('no start point found')
         return -1
-    else:
-        # plot each point on a figure
-        plt.plot(xs, ys, 'ro-')
-        # save the figure
-        plt.savefig(f'{filename}.png')
+    # else:
+    #     # plot each point on a figure
+    #     plt.plot(xs, ys, 'ro-')
+    #     # save the figure
+    #     plt.savefig(f'{filename}.png')
      
     # return points and minimum radius
     radii = min(radii)
@@ -231,7 +239,10 @@ def get_shot_metrics(filename, hand):
 if __name__ == "__main__":
     # video file
     # filenames is 1-10.mov
-    filenames = ['1.mov', '2.mov', '3.mov', '4.mov', '5.mov', '6.mov', '7.mov', '8.mov', '9.mov', '10.mov']
+    # filenames = ['1.mov', '2.mov', '3.mov', '4.mov', '5.mov', '6.mov',
+    # '7.mov', '8.mov', '9.mov', '10.mov']
+    # filenames = ['Backend/6.MOV']
+    filenames = ['rangr/media/lklaus1647402281.2473774.mov']
     # filenames = ['10.mov']
     # for filename in filenames:
     #     # get the points of the ball and the radius of the largest contour
