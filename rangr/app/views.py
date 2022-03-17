@@ -72,6 +72,99 @@ def post_shot(request):
 
     return JsonResponse({})
 
+# plot ball path
+def get_ball_points(filename, hand):
+    # take a video file as input
+    video = cv2.VideoCapture(filename)
+    # range of yellow in hsv
+    lower = (29, 122, 60)
+    upper = (45, 255, 255)
+    # keep track of largest contour location and radius
+    xs = []
+    ys = []
+    radii = []
+    # take video frame by frame
+    while True:
+        (grabbed, frame) = video.read()
+        if frame is None:
+            # return x,y,radius
+            break
+        # reduce the size by a factor of 2
+        # scale_percent = 50
+        # width = int(frame.shape[1] * scale_percent / 100)
+        # height = int(frame.shape[0] * scale_percent / 100)
+        # dim = (width, height)
+        # # resize image
+        # frame = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
+        # convert to hsv
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        # create a mask using the range of yellow
+        frame = cv2.inRange(frame, lower, upper)
+        # find the contours of the frame
+        contours = cv2.findContours(frame, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
+        # if no contours found, skip this frame
+        if len(contours) == 0:
+            continue
+        # find the largest contour in the mask
+        c = max(contours, key=cv2.contourArea)
+        ((x, y), radius) = cv2.minEnclosingCircle(c)
+        # if radius is larger than 20, find the next largest contour if one exists
+
+        xs.append(round(x))
+        ys.append(round(frame.shape[0] - y))
+        radii.append(round(radius))
+
+    ## obtain the x and y coordinates of the ball in motion
+    # for i in range(len(xs)):
+    #     print(xs[i], ys[i])
+    # plot the ball path if we found at least 20 contours
+    if len(xs) > 20 and hand == 'right':
+        # look for a series of 3 points where y is increasing
+        for i in range(len(ys) - 3):
+            if ys[i] < ys[i+1] and ys[i+1] < ys[i+2] and xs[i] < xs[i+1] and xs[i+1] < xs[i+2]:
+                # we found the first point
+                xs = xs[i:i+3]
+                ys = ys[i:i+3]
+                radii = radii[i:i+3]
+                break
+                
+    if len(xs) > 20 and hand == 'left':
+        # look for a series of 3 points where y is increasing
+        for i in range(len(ys) - 3):
+            if ys[i] < ys[i+1] and ys[i+1] < ys[i+2] and xs[i] > xs[i+1] and xs[i+1] > xs[i+2]:
+                # we found the first point
+                xs = xs[i:i+3]
+                ys = ys[i:i+3]
+                radii = radii[i:i+3]
+                break
+
+    # if we couldn't find three consecutive points, loop for 2 consecutive 
+    # increasing points moving in the correct direction based on the hand
+    if len(xs) > 20 and hand == 'right':
+        for i in range(len(ys) - 2):
+            if ys[i] < ys[i+1] and xs[i] < xs[i+1] and radii[i] < 40:
+                # we found the first point
+                xs = xs[i:i+2]
+                ys = ys[i:i+2]
+                radii = radii[i:i+2]
+                break
+    if len(xs) > 20 and hand == 'left':
+        for i in range(len(ys) - 2):
+            if ys[i] < ys[i+1] and xs[i] > xs[i+1] and radii[i] < 40:
+                # we found the first point
+                # invert the points as if the hand was right
+                # and the ball moves up to the right instead of up to the left
+                xs = [xs[i+1], xs[i]]
+                ys = [ys[i], ys[i+1]]
+                radii = radii[i:i+2]
+                break
+    # if we still haven't found a series of points, this video will not work
+    if len(xs) > 20:
+        # print('no start point found')
+        return -1
+    # return points and minimum radius
+    radii = min(radii)
+    return (xs, ys, radii)
 
 
 
