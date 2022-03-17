@@ -6,9 +6,10 @@
 //
 
 struct ShotMetric {
-    var timeStamp: String?
     var launchAngle: String?
     var launchSpeed: String?
     var hangTime: String?
     var distance: String?
+    var club: String?
+//    var timeStamp: String?
 }
