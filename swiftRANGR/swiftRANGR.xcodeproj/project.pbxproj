@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EF7ACC527E3E95F00EDEC70 /* postVideoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7ACC427E3E95F00EDEC70 /* postVideoPopup.swift */; };
 		A43F953527DE847400EA100B /* swiftRANGRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F953427DE847400EA100B /* swiftRANGRApp.swift */; };
 		A43F953727DE847400EA100B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F953627DE847400EA100B /* MainView.swift */; };
 		A43F953927DE847500EA100B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A43F953827DE847500EA100B /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EF7ACC427E3E95F00EDEC70 /* postVideoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postVideoPopup.swift; sourceTree = "<group>"; };
 		A43F953127DE847400EA100B /* swiftRANGR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftRANGR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43F953427DE847400EA100B /* swiftRANGRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftRANGRApp.swift; sourceTree = "<group>"; };
 		A43F953627DE847400EA100B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				A4E0F2BB27E2E27000039A78 /* ShotMetric.swift */,
 				A4E0F2BD27E2E33200039A78 /* ShotMetricStore.swift */,
 				A4E0F2BF27E2E5C900039A78 /* ShotMetricRow.swift */,
+				2EF7ACC427E3E95F00EDEC70 /* postVideoPopup.swift */,
 			);
 			path = swiftRANGR;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EF7ACC527E3E95F00EDEC70 /* postVideoPopup.swift in Sources */,
 				A43F953727DE847400EA100B /* MainView.swift in Sources */,
 				A4E0F2BE27E2E33200039A78 /* ShotMetricStore.swift in Sources */,
 				A4E0F2C027E2E5C900039A78 /* ShotMetricRow.swift in Sources */,
