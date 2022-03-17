@@ -6,7 +6,7 @@ Connects to the server
 
 Database is called rangrdb. Has tables `users` and `shots`
 
-use `udo -u postgres psql` to connect
+use `sudo -u postgres psql` to connect
 
 `users` table looks like:
 
