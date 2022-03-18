@@ -8,10 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		2E6EFF9C27A9AD6900F9ECDF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6EFF9B27A9AD6900F9ECDF /* Extensions.swift */; };
+<<<<<<< Updated upstream
 		A471919F27E4440500F3917C /* MetricsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A471919E27E4440500F3917C /* MetricsStore.swift */; };
 		A47191A327E446B400F3917C /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191A227E446B400F3917C /* Metrics.swift */; };
 		A47191A527E4AEA400F3917C /* MetricsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191A427E4AEA400F3917C /* MetricsTableCell.swift */; };
 		A47191A927E4AFAD00F3917C /* MetricsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191A827E4AFAD00F3917C /* MetricsTableVC.swift */; };
+=======
+		A47191AB27E4B88900F3917C /* MetricsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191AA27E4B88900F3917C /* MetricsStore.swift */; };
+		A47191AD27E4B89500F3917C /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191AC27E4B89500F3917C /* Metrics.swift */; };
+		A47191B127E4B8A200F3917C /* MetricsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191B027E4B8A200F3917C /* MetricsTableVC.swift */; };
+		A47191B327E4BBD700F3917C /* MetricsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191B227E4BBD700F3917C /* MetricsTableCell.swift */; };
+>>>>>>> Stashed changes
 		B3F221BB2790D084003283ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F221BA2790D084003283ED /* AppDelegate.swift */; };
 		B3F221BD2790D084003283ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F221BC2790D084003283ED /* SceneDelegate.swift */; };
 		B3F221C22790D084003283ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F221C02790D084003283ED /* Main.storyboard */; };
@@ -30,10 +37,17 @@
 		414871B382B51B061DD95C33 /* Pods-swiftChatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftChatter.release.xcconfig"; path = "Target Support Files/Pods-swiftChatter/Pods-swiftChatter.release.xcconfig"; sourceTree = "<group>"; };
 		6E8EB81ADC47EF7FF7414133 /* Pods-swiftChatter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftChatter.debug.xcconfig"; path = "Target Support Files/Pods-swiftChatter/Pods-swiftChatter.debug.xcconfig"; sourceTree = "<group>"; };
 		95D2C46F754F0C7886FC6DC0 /* Pods_swiftChatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftChatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< Updated upstream
 		A471919E27E4440500F3917C /* MetricsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsStore.swift; sourceTree = "<group>"; };
 		A47191A227E446B400F3917C /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		A47191A427E4AEA400F3917C /* MetricsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsTableCell.swift; sourceTree = "<group>"; };
 		A47191A827E4AFAD00F3917C /* MetricsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsTableVC.swift; sourceTree = "<group>"; };
+=======
+		A47191AA27E4B88900F3917C /* MetricsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsStore.swift; sourceTree = "<group>"; };
+		A47191AC27E4B89500F3917C /* Metrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		A47191B027E4B8A200F3917C /* MetricsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsTableVC.swift; sourceTree = "<group>"; };
+		A47191B227E4BBD700F3917C /* MetricsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsTableCell.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		B369BF1427978CF8002C243B /* selfsigned.crt */ = {isa = PBXFileReference; lastKnownFileType = file; name = selfsigned.crt; path = ../../../selfsigned.crt; sourceTree = "<group>"; };
 		B3F221B72790D084003283ED /* swiftChatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftChatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F221BA2790D084003283ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +113,13 @@
 		B3F221B92790D084003283ED /* swiftChatter */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
 				A471919E27E4440500F3917C /* MetricsStore.swift */,
+=======
+				A47191AC27E4B89500F3917C /* Metrics.swift */,
+				A47191AA27E4B88900F3917C /* MetricsStore.swift */,
+				A47191B027E4B8A200F3917C /* MetricsTableVC.swift */,
+>>>>>>> Stashed changes
 				B3F221D22790EA3F003283ED /* PostVC.swift */,
 				B3F221BA2790D084003283ED /* AppDelegate.swift */,
 				B3F221BC2790D084003283ED /* SceneDelegate.swift */,
@@ -113,9 +133,13 @@
 				B3F221D62790ECBB003283ED /* MainVC.swift */,
 				B369BF1427978CF8002C243B /* selfsigned.crt */,
 				2E6EFF9B27A9AD6900F9ECDF /* Extensions.swift */,
+<<<<<<< Updated upstream
 				A47191A227E446B400F3917C /* Metrics.swift */,
 				A47191A427E4AEA400F3917C /* MetricsTableCell.swift */,
 				A47191A827E4AFAD00F3917C /* MetricsTableVC.swift */,
+=======
+				A47191B227E4BBD700F3917C /* MetricsTableCell.swift */,
+>>>>>>> Stashed changes
 			);
 			path = swiftChatter;
 			sourceTree = "<group>";
@@ -235,9 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47191B327E4BBD700F3917C /* MetricsTableCell.swift in Sources */,
 				B3F221D32790EA3F003283ED /* PostVC.swift in Sources */,
 				B3F221D52790EC5F003283ED /* ChattTableCell.swift in Sources */,
 				B3F221BB2790D084003283ED /* AppDelegate.swift in Sources */,
+<<<<<<< Updated upstream
 				A47191A527E4AEA400F3917C /* MetricsTableCell.swift in Sources */,
 				A471919F27E4440500F3917C /* MetricsStore.swift in Sources */,
 				2E6EFF9C27A9AD6900F9ECDF /* Extensions.swift in Sources */,
@@ -247,6 +273,16 @@
 				B3F221D12790E8C2003283ED /* ChattStore.swift in Sources */,
 				B3F221D72790ECBB003283ED /* MainVC.swift in Sources */,
 				A47191A927E4AFAD00F3917C /* MetricsTableVC.swift in Sources */,
+=======
+				A47191AB27E4B88900F3917C /* MetricsStore.swift in Sources */,
+				2E6EFF9C27A9AD6900F9ECDF /* Extensions.swift in Sources */,
+				B3F221CF2790E89C003283ED /* Chatt.swift in Sources */,
+				B3F221BD2790D084003283ED /* SceneDelegate.swift in Sources */,
+				A47191AD27E4B89500F3917C /* Metrics.swift in Sources */,
+				B3F221D12790E8C2003283ED /* ChattStore.swift in Sources */,
+				B3F221D72790ECBB003283ED /* MainVC.swift in Sources */,
+				A47191B127E4B8A200F3917C /* MetricsTableVC.swift in Sources */,
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,10 +441,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,10 +475,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
