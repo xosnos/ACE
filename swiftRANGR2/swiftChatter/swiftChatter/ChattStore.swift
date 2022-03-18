@@ -46,7 +46,7 @@ final class ChattStore {
             }, to: apiUrl, method: .post).response { response in
                 switch (response.result) {
                 case .success:
-                    self.getChatts()
+//                    self.getChatts()
                     print("postChatt: chatt posted!")
                 case .failure:
                     print("postChatt: posting failed")
@@ -56,39 +56,39 @@ final class ChattStore {
 
     
 
-    func getChatts() {
-        guard let apiUrl = URL(string: serverUrl+"get_user_last_shot/") else {
-            print("getChatts: bad URL")
-            return
-        }
-        // for each thing get_user_last_shot/userid ... hand ...
-        AF.request(apiUrl, method: .get).responseJSON { response in
-            guard let data = response.data, response.error == nil else {
-                print("getChatts: NETWORKING ERROR")
-                return
-            }
-            if let httpStatus = response.response, httpStatus.statusCode != 200 {
-                print("getChatts: HTTP STATUS: \(httpStatus.statusCode)")
-                return
-            }
-            
-            guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
-                print("getChatts: failed JSON deserialization")
-                return
-            }
-            let chattsReceived = jsonObj["chatts"] as? [[String?]] ?? []
-            self.chatts = [Chatt]()
-            for chattEntry in chattsReceived {
-                if (chattEntry.count == self.nFields) {
-                    self.chatts.append(Chatt(userid: chattEntry[0],
-                                     hand: chattEntry[1],
-                                     club: chattEntry[2],
-                                     videoUrl: chattEntry[4]))
-                } else {
-                    print("getChatts: Received unexpected number of fields: \(chattEntry.count) instead of \(self.nFields).")
-                }
-            }
-        }
-    }
+//    func getChatts() {
+//        guard let apiUrl = URL(string: serverUrl+"get_user_last_shot/") else {
+//            print("getChatts: bad URL")
+//            return
+//        }
+//        // for each thing get_user_last_shot/userid ... hand ...
+//        AF.request(apiUrl, method: .get).responseJSON { response in
+//            guard let data = response.data, response.error == nil else {
+//                print("getChatts: NETWORKING ERROR")
+//                return
+//            }
+//            if let httpStatus = response.response, httpStatus.statusCode != 200 {
+//                print("getChatts: HTTP STATUS: \(httpStatus.statusCode)")
+//                return
+//            }
+//
+//            guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+//                print("getChatts: failed JSON deserialization")
+//                return
+//            }
+//            let chattsReceived = jsonObj["chatts"] as? [[String?]] ?? []
+//            self.chatts = [Chatt]()
+//            for chattEntry in chattsReceived {
+//                if (chattEntry.count == self.nFields) {
+//                    self.chatts.append(Chatt(userid: chattEntry[0],
+//                                     hand: chattEntry[1],
+//                                     club: chattEntry[2],
+//                                     videoUrl: chattEntry[4]))
+//                } else {
+//                    print("getChatts: Received unexpected number of fields: \(chattEntry.count) instead of \(self.nFields).")
+//                }
+//            }
+//        }
+//    }
 } // class ChattStore
 

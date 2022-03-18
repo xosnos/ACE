@@ -27,7 +27,7 @@ final class MainVC: UITableViewController {
         // setup refreshControler here later
         refreshControl?.addAction(UIAction(handler: refreshTimeline), for: UIControl.Event.valueChanged)
         
-        ChattStore.shared.getChatts()
+//        ChattStore.shared.getChatts()
     }
     
     // MARK:- TableView handlers
@@ -84,7 +84,7 @@ final class MainVC: UITableViewController {
     }
     
     private func refreshTimeline(_ sender: UIAction?) {
-        ChattStore.shared.getChatts()
+//        ChattStore.shared.getChatts()
 
         // stop the refreshing animation upon completion:
         self.refreshControl?.endRefreshing()
