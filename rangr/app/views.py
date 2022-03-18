@@ -46,7 +46,7 @@ def get_shot_log(request, user_id, number):
     query = """SELECT DISTINCT time, club, distance, launch_speed, launch_angle, hang_time
             FROM shots S
             WHERE S.user_id = %s
-            ORDER BY time
+            ORDER BY time DESC
             LIMIT %s;
         """
     cursor.execute(query, (user_id, number,))
