@@ -11,7 +11,29 @@ import numpy as np
 import cv2
 import math
 
+def get_shot_log(request, user_id, number):
+    if request.method != 'GET':
+        return HttpResponse(status=404)
+    cursor = connection.cursor()
+
+    query = """SELECT time, club, distance, launch_speed, launch_angle, hang_time
+            FROM users U, shots S
+            WHERE S.user_id = %s
+            ORDER BY time
+            LIMIT %s;
+        """
+    cursor.execute(query, (user_id, number,))
+    rows = cursor.fetchall()
+    
+    response = {'data': rows}
+    return JsonResponse(response)
+    
+
+
+
+
 # get the most recent shot taken by the user
+# take user_id as url. /get_user_last_shot/X
 def get_user_last_shot(request, user_id):
     if request.method != 'GET':
         return HttpResponse(status=404)

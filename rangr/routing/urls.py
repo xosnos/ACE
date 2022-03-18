@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('get_user_last_shot/<int:user_id>/', views.get_user_last_shot, name='get_user_last_shot'),
     path('post_shot/', views.post_shot, name='post_shot'),
+    path('get_shot_log', views.get_shot_log, name='get_shot_log'),
 ]
