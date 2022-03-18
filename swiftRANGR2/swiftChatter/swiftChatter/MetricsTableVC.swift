@@ -26,7 +26,7 @@ final class MetricsTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // how many rows per section
-        return ChattStore.shared.chatts.count
+        return MetricsStore.shared.log.count
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -43,11 +43,11 @@ final class MetricsTableVC: UITableViewController {
         let metrics = MetricsStore.shared.log[indexPath.row]
         cell.backgroundColor = (indexPath.row % 2 == 0) ? .systemGray5 : .systemGray6
         cell.timeStampLabel.text = metrics.timeStamp
-        cell.clubLabel.text = metrics.club
-        cell.launchAngleLabel.text = metrics.launchAngle
-        cell.launchSpeedLabel.text = metrics.launchSpeed
-        cell.hangTimeLabel.text = metrics.hangTime
-        cell.distanceLabel.text = metrics.distance
+        cell.clubLabel.text = "Club: \(metrics.club ?? "N/A")"
+        cell.launchAngleLabel.text = "Launch Angle: \(metrics.launchAngle ?? "N/A") deg"
+        cell.launchSpeedLabel.text = "Lauch Speed: \(metrics.launchSpeed ?? "N/A") mph"
+        cell.hangTimeLabel.text = "Hang Time: \(metrics.hangTime ?? "N/A") sec(s)"
+        cell.distanceLabel.text = "Distance: \(metrics.distance ?? "N/A") yd(s)"
         return cell
     }
     private func refreshTimeline(_ sender: UIAction?) {
