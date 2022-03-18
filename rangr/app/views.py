@@ -11,26 +11,49 @@ import numpy as np
 import cv2
 import math
 
+def get_averages_and_bests(request, user_id):
+    if request.method != 'GET':
+        return HttpResponse(status=404)
+    cursor = connection.cursor()
+
+
+# SELECT DISTINCT ON (user_id)
+#        user_id, launch_speed, time
+# FROM   shots S
+# WHERE  S.user_id = 1
+# ORDER  BY user_id, launch_speed DESC, time;
+
+    query = """ SELECT DISTINCT ON (user_id)
+                user_id, launch_speed, time
+                FROM shots S
+                WHERE S.user_id = %s
+                ORDER BY user_id, launch_speed DESC, time;
+        """
+    cursor.execute(query, [user_id])
+    rows = cursor.fetchall()
+
+    response = {'data': rows}
+    return JsonResponse(response)
+    
+
+# takes in user and number of shots you want
+# Ex. /get_shot_log/1/10
 def get_shot_log(request, user_id, number):
     if request.method != 'GET':
         return HttpResponse(status=404)
     cursor = connection.cursor()
 
     query = """SELECT time, club, distance, launch_speed, launch_angle, hang_time
-            FROM users U, shots S
+            FROM shots S
             WHERE S.user_id = %s
             ORDER BY time
             LIMIT %s;
         """
     cursor.execute(query, (user_id, number,))
     rows = cursor.fetchall()
-    
+
     response = {'data': rows}
     return JsonResponse(response)
-    
-
-
-
 
 # get the most recent shot taken by the user
 # take user_id as url. /get_user_last_shot/X
@@ -39,7 +62,7 @@ def get_user_last_shot(request, user_id):
         return HttpResponse(status=404)
     cursor = connection.cursor()
     query = """SELECT launch_angle, launch_speed, hang_time, distance, club, time
-            FROM users U, shots S
+            FROM shots S
             WHERE S.user_id = %s
             ORDER BY time DESC
             LIMIT 1;
