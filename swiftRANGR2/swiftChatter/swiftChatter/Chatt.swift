@@ -8,10 +8,9 @@
 import Foundation
 
 struct Chatt {
-    var username: String?
-    var message: String?
-    var timestamp: String?
-    @ChattPropWrapper var imageUrl: String?
+    var userid: String?
+    var hand: String?
+    var club: String?
     @ChattPropWrapper var videoUrl: String?
 }
 @propertyWrapper

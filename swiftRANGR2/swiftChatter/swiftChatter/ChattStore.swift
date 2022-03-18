@@ -21,24 +21,24 @@ final class ChattStore {
     }
     private let nFields = Mirror(reflecting: Chatt()).children.count
 
-    private let serverUrl = "https://35.237.18.183/"
+    private let serverUrl = "https://34.70.39.80/"
     // Once you have your own back-end server set up, you will replace mobapp.eecs.umich.edu with your server’s IP address.
 
-    func postChatt(_ chatt: Chatt, image: UIImage?) {
-            guard let apiUrl = URL(string: serverUrl+"postimages/") else {
+    func postChatt(_ chatt: Chatt) {
+            guard let apiUrl = URL(string: serverUrl+"post_shot/") else {
                 print("postChatt: Bad URL")
                 return
             }
-            
+            print("here")
             AF.upload(multipartFormData: { mpFD in
-                if let username = chatt.username?.data(using: .utf8) {
-                    mpFD.append(username, withName: "username")
+                if let userid = chatt.userid?.data(using: .utf8) {
+                    mpFD.append(userid, withName: "user_id")
                 }
-                if let message = chatt.message?.data(using: .utf8) {
-                    mpFD.append(message, withName: "message")
+                if let hand = chatt.hand?.data(using: .utf8) {
+                    mpFD.append(hand, withName: "hand")
                 }
-                if let jpegImage = image?.jpegData(compressionQuality: 1.0) {
-                    mpFD.append(jpegImage, withName: "image", fileName: "chattImage", mimeType: "image/jpeg")
+                if let club = chatt.club?.data(using: .utf8) {
+                    mpFD.append(club, withName: "club")
                 }
                 if let urlString = chatt.videoUrl, let videoUrl = URL(string: urlString) {
                     mpFD.append(videoUrl, withName: "video", fileName: "chattVideo", mimeType: "video/mp4")
@@ -57,11 +57,11 @@ final class ChattStore {
     
 
     func getChatts() {
-        guard let apiUrl = URL(string: serverUrl+"getimages/") else {
+        guard let apiUrl = URL(string: serverUrl+"get_user_last_shot/") else {
             print("getChatts: bad URL")
             return
         }
-        
+        // for each thing get_user_last_shot/userid ... hand ...
         AF.request(apiUrl, method: .get).responseJSON { response in
             guard let data = response.data, response.error == nil else {
                 print("getChatts: NETWORKING ERROR")
@@ -80,10 +80,9 @@ final class ChattStore {
             self.chatts = [Chatt]()
             for chattEntry in chattsReceived {
                 if (chattEntry.count == self.nFields) {
-                    self.chatts.append(Chatt(username: chattEntry[0],
-                                     message: chattEntry[1],
-                                     timestamp: chattEntry[2],
-                                     imageUrl: chattEntry[3],
+                    self.chatts.append(Chatt(userid: chattEntry[0],
+                                     hand: chattEntry[1],
+                                     club: chattEntry[2],
                                      videoUrl: chattEntry[4]))
                 } else {
                     print("getChatts: Received unexpected number of fields: \(chattEntry.count) instead of \(self.nFields).")
