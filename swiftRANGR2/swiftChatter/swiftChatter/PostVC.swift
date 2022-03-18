@@ -30,7 +30,7 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         imagePickerController.sourceType = sourceType
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
-        imagePickerController.mediaTypes = ["public.image","public.movie"]
+        imagePickerController.mediaTypes = ["public.movie"]
         imagePickerController.videoMaximumDuration = TimeInterval(5) // secs
         imagePickerController.videoQuality = .typeHigh
         present(imagePickerController, animated: true, completion: nil)
@@ -50,17 +50,9 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     @IBOutlet weak var postImage: UIImageView!
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
-        if let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String {
-            if mediaType  == "public.image" {
-                postImage.image = (info[UIImagePickerController.InfoKey.editedImage] as? UIImage ??
-                                    info[UIImagePickerController.InfoKey.originalImage] as? UIImage)?
-                    .resizeImage(targetSize: CGSize(width: 150, height: 181))
-            } else if mediaType == "public.movie" {
-               videoUrl = info[UIImagePickerController.InfoKey.mediaURL] as? URL
-               // can convert to absoluteString ONLY after picker.dismiss
-            }
-        }
-       picker.dismiss(animated: true, completion: nil)
+        videoUrl = info[UIImagePickerController.InfoKey.mediaURL] as? URL
+        // This is where the URL is stored, we need to send it to the backend
+        picker.dismiss(animated: true, completion: nil)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
