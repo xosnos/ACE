@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< Updated upstream
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pCm-Jk-gZE">
-=======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x2S-cU-IQS">
->>>>>>> Stashed changes
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -285,8 +281,6 @@
             </objects>
             <point key="canvasLocation" x="-1881" y="464"/>
         </scene>
-<<<<<<< Updated upstream
-=======
         <!--Tab Bar Controller-->
         <scene sceneID="B7f-bX-xNR">
             <objects>
@@ -305,16 +299,11 @@
             </objects>
             <point key="canvasLocation" x="-2494" y="400"/>
         </scene>
->>>>>>> Stashed changes
         <!--Item-->
         <scene sceneID="ddS-jE-YFd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g2D-eD-E8Z" sceneMemberID="viewController">
-<<<<<<< Updated upstream
-                    <tabBarItem key="tabBarItem" title="Item" id="6Ik-vP-FLJ"/>
-=======
                     <tabBarItem key="tabBarItem" title="Item" id="EKz-fb-Uu4"/>
->>>>>>> Stashed changes
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CbI-63-9vf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
