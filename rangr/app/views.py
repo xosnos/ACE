@@ -43,7 +43,7 @@ def get_shot_log(request, user_id, number):
         return HttpResponse(status=404)
     cursor = connection.cursor()
 
-    query = """SELECT time, club, distance, launch_speed, launch_angle, hang_time
+    query = """SELECT DISTINCT time, club, distance, launch_speed, launch_angle, hang_time
             FROM shots S
             WHERE S.user_id = %s
             ORDER BY time
@@ -61,7 +61,7 @@ def get_user_last_shot(request, user_id):
     if request.method != 'GET':
         return HttpResponse(status=404)
     cursor = connection.cursor()
-    query = """SELECT launch_angle, launch_speed, hang_time, distance, club, time
+    query = """SELECT DISTINCT launch_angle, launch_speed, hang_time, distance, club, time
             FROM shots S
             WHERE S.user_id = %s
             ORDER BY time DESC
