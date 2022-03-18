@@ -34,27 +34,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-A2-ixw">
-                                <rect key="frame" x="119" y="345" width="176" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-A2-ixw">
+                                <rect key="frame" x="20" y="130" width="374" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="eKi-wg-0fa"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Left" titleAlignment="center"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-Hq-h89">
-                                <rect key="frame" x="119" y="448" width="176" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-Hq-h89">
+                                <rect key="frame" x="20" y="233" width="374" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="yle-CY-xNf"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Right" titleAlignment="center"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pt4-f2-G3n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="S7o-Hq-h89" firstAttribute="leading" secondItem="pt4-f2-G3n" secondAttribute="leading" constant="20" id="CXW-Gl-c59"/>
+                            <constraint firstItem="S7o-Hq-h89" firstAttribute="top" secondItem="QU3-A2-ixw" secondAttribute="bottom" constant="35" id="Lp1-Yx-ZWn"/>
+                            <constraint firstItem="QU3-A2-ixw" firstAttribute="top" secondItem="pt4-f2-G3n" secondAttribute="top" constant="42" id="ilP-hZ-SyO"/>
+                            <constraint firstItem="pt4-f2-G3n" firstAttribute="trailing" secondItem="S7o-Hq-h89" secondAttribute="trailing" constant="20" id="lH7-d2-K8V"/>
+                            <constraint firstItem="pt4-f2-G3n" firstAttribute="trailing" secondItem="QU3-A2-ixw" secondAttribute="trailing" constant="20" id="uvT-20-O5E"/>
+                            <constraint firstItem="QU3-A2-ixw" firstAttribute="leading" secondItem="pt4-f2-G3n" secondAttribute="leading" constant="20" id="yjd-wg-iS8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Handedness" id="hxQ-x4-hE0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqb-ph-ElV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-459" y="-1418"/>
+            <point key="canvasLocation" x="-459.4202898550725" y="-1418.3035714285713"/>
         </scene>
         <!--Select Club-->
         <scene sceneID="BN6-fp-P4W">
@@ -81,33 +93,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh3-o5-zR1">
-                                <rect key="frame" x="119" y="157" width="176" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh3-o5-zR1">
+                                <rect key="frame" x="20" y="121" width="374" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="Fc4-g7-adS"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Driver" titleAlignment="center"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6k-4v-7Sj">
-                                <rect key="frame" x="119" y="244" width="176" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6k-4v-7Sj">
+                                <rect key="frame" x="20" y="208" width="374" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="cP6-Rx-ndF"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Wood" titleAlignment="center"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olM-8N-5Yd">
-                                <rect key="frame" x="119" y="334" width="176" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olM-8N-5Yd">
+                                <rect key="frame" x="20" y="298" width="374" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="cje-dn-vaJ"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Iron" titleAlignment="center"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQQ-MC-h5v">
-                                <rect key="frame" x="119" y="426" width="176" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQQ-MC-h5v">
+                                <rect key="frame" x="20" y="390" width="374" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="9WF-Da-id9"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Wedge" titleAlignment="center"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oHd-zb-9FQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="l6k-4v-7Sj" firstAttribute="leading" secondItem="oHd-zb-9FQ" secondAttribute="leading" constant="20" id="0F1-P3-B2S"/>
+                            <constraint firstItem="wQQ-MC-h5v" firstAttribute="leading" secondItem="oHd-zb-9FQ" secondAttribute="leading" constant="20" id="2rh-ZJ-pxd"/>
+                            <constraint firstItem="oHd-zb-9FQ" firstAttribute="trailing" secondItem="oh3-o5-zR1" secondAttribute="trailing" constant="20" id="8mM-KZ-k6p"/>
+                            <constraint firstItem="oHd-zb-9FQ" firstAttribute="trailing" secondItem="wQQ-MC-h5v" secondAttribute="trailing" constant="20" id="ERa-aU-DRa"/>
+                            <constraint firstItem="l6k-4v-7Sj" firstAttribute="top" secondItem="oh3-o5-zR1" secondAttribute="bottom" constant="19" id="GbI-ql-ymK"/>
+                            <constraint firstItem="oh3-o5-zR1" firstAttribute="leading" secondItem="oHd-zb-9FQ" secondAttribute="leading" constant="20" id="IRG-MC-Bfs"/>
+                            <constraint firstItem="oh3-o5-zR1" firstAttribute="top" secondItem="oHd-zb-9FQ" secondAttribute="top" constant="33" id="KAM-w8-5SV"/>
+                            <constraint firstItem="wQQ-MC-h5v" firstAttribute="top" secondItem="olM-8N-5Yd" secondAttribute="bottom" constant="24" id="PxW-PJ-raY"/>
+                            <constraint firstItem="oHd-zb-9FQ" firstAttribute="trailing" secondItem="olM-8N-5Yd" secondAttribute="trailing" constant="20" id="hbj-vt-fGv"/>
+                            <constraint firstItem="olM-8N-5Yd" firstAttribute="top" secondItem="l6k-4v-7Sj" secondAttribute="bottom" constant="22" id="hiP-Qc-B1A"/>
+                            <constraint firstItem="oHd-zb-9FQ" firstAttribute="trailing" secondItem="l6k-4v-7Sj" secondAttribute="trailing" constant="20" id="io3-5l-BCM"/>
+                            <constraint firstItem="olM-8N-5Yd" firstAttribute="leading" secondItem="oHd-zb-9FQ" secondAttribute="leading" constant="20" id="soe-9z-RXf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Club" id="fEa-gl-OLt"/>
                 </viewController>
@@ -124,17 +158,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the record button to record your shot" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpE-oF-e6t">
-                                <rect key="frame" x="20" y="648.5" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="607.5" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHk-wv-84G" userLabel="Camera Button">
-                                <rect key="frame" x="20" y="709.5" width="374" height="49.5"/>
+                                <rect key="frame" x="20" y="668.5" width="374" height="90.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system" title="">
                                     <backgroundConfiguration key="background"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="60"/>
                                     <color key="baseForegroundColor" systemColor="systemPinkColor"/>
                                 </buttonConfiguration>
                                 <connections>
