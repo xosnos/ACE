@@ -27,7 +27,7 @@ final class MainVC: UITableViewController {
         // setup refreshControler here later
         refreshControl?.addAction(UIAction(handler: refreshTimeline), for: UIControl.Event.valueChanged)
         
-        ChattStore.shared.getChatts()
+//        ChattStore.shared.getChatts()
     }
     
     // MARK:- TableView handlers
@@ -55,36 +55,36 @@ final class MainVC: UITableViewController {
         
         let chatt = ChattStore.shared.chatts[indexPath.row]
         cell.backgroundColor = (indexPath.row % 2 == 0) ? .systemGray5 : .systemGray6
-        cell.usernameLabel.text = chatt.username
-        cell.messageLabel.text = chatt.message
-        cell.timestampLabel.text = chatt.timestamp
-        if let urlString = chatt.imageUrl, let imageUrl = URL(string: urlString) {
-                    cell.chattImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(systemName: "photo"), options: [.progressiveLoad])
-                    cell.chattImageView.isHidden = false
-        } else {
-            cell.chattImageView.image = nil
-            cell.chattImageView.isHidden = true
-        }
-        if let urlString = chatt.videoUrl, let videoUrl = URL(string: urlString) {
-            cell.videoButton.isHidden = false // remember: cells are recycled and reused
-            cell.playVideo = {
-                let avPlayerVC = AVPlayerViewController()
-                avPlayerVC.player = AVPlayer(url: videoUrl)
-                if let player = avPlayerVC.player {
-                    self.present(avPlayerVC, animated: true) {
-                        player.play()
-                    }
-                }
-            }
-        } else {
-            cell.videoButton.isHidden = true
-            cell.playVideo = nil
-        }
+//        cell.usernameLabel.text = chatt.username
+//        cell.messageLabel.text = chatt.message
+//        cell.timestampLabel.text = chatt.timestamp
+//        if let urlString = chatt.imageUrl, let imageUrl = URL(string: urlString) {
+//                    cell.chattImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(systemName: "photo"), options: [.progressiveLoad])
+//                    cell.chattImageView.isHidden = false
+//        } else {
+//            cell.chattImageView.image = nil
+//            cell.chattImageView.isHidden = true
+//        }
+//        if let urlString = chatt.videoUrl, let videoUrl = URL(string: urlString) {
+//            cell.videoButton.isHidden = false // remember: cells are recycled and reused
+//            cell.playVideo = {
+//                let avPlayerVC = AVPlayerViewController()
+//                avPlayerVC.player = AVPlayer(url: videoUrl)
+//                if let player = avPlayerVC.player {
+//                    self.present(avPlayerVC, animated: true) {
+//                        player.play()
+//                    }
+//                }
+//            }
+//        } else {
+//            cell.videoButton.isHidden = true
+//            cell.playVideo = nil
+//        }
         return cell
     }
     
     private func refreshTimeline(_ sender: UIAction?) {
-        ChattStore.shared.getChatts()
+//        ChattStore.shared.getChatts()
 
         // stop the refreshing animation upon completion:
         self.refreshControl?.endRefreshing()
