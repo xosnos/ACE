@@ -88,19 +88,20 @@ def post_shot(request):
     hand = request.POST.get("hand")
 
     # load the video if it exists. 
-    if request.FILES.get("video"):
-        content = request.FILES['video']
-        filename = str(user_id) + str(time.time()) + ".mov"
-        fname = filename
-        fs = FileSystemStorage()
-        filename = fs.save(filename, content)
-        # videourl = fs.url(filename)
-    else:
-        return JsonResponse({})
+    #if request.FILES.get("video"):
+    content = request.FILES["video"]
+    filename = str(user_id) + str(time.time()) + ".mov"
+    fname = filename
+    fs = FileSystemStorage()
+    filename = fs.save(filename, content)
+    # videourl = fs.url(filename)
 
     # get shot data for given video url
     #data = get_shot_metrics(f"~/ACE/rangr/media/11647555259.3231792.mov/", hand)
     data = get_shot_metrics(f"{settings.MEDIA_ROOT}/{fname}", hand)
+    if data['launch_speed'] == -1 or data['launch_angle'] == -1 or data['distance'] == -1 or data['hang_time'] == -1:
+        return HttpResponse(status=400)
+
     launch_speed = float(data['launch_speed'])
     launch_angle = float(data['launch_angle'])
     distance = float(data['distance'])
