@@ -11,29 +11,85 @@ import numpy as np
 import cv2
 import math
 
-def get_averages_and_bests(request, user_id):
+def get_avgs_and_bests(request, user_id):
     if request.method != 'GET':
         return HttpResponse(status=404)
     cursor = connection.cursor()
+    return_dict = {}
 
-
-# SELECT DISTINCT ON (user_id)
-#        user_id, launch_speed, time
-# FROM   shots S
-# WHERE  S.user_id = 1
-# ORDER  BY user_id, launch_speed DESC, time;
-
+    # Get all speed data
     query = """ SELECT DISTINCT ON (user_id)
                 user_id, launch_speed, time
                 FROM shots S
                 WHERE S.user_id = %s
                 ORDER BY user_id, launch_speed DESC, time;
-        """
+            """
     cursor.execute(query, [user_id])
     rows = cursor.fetchall()
+    max_speed = rows[0][1]
+    max_speed_time = rows[0][2]
+    speed = {}
+    speed["max_speed"] = max_speed
+    speed["max_speed_time"] = max_speed_time
+    query = """ SELECT AVG(launch_speed)
+                FROM shots S
+                WHERE S.user_id = %s
+            """
+    cursor.execute(query, [user_id])
+    rows = cursor.fetchall()
+    avg_speed = rows[0][0]
+    speed["avg_speed"] = avg_speed
+    return_dict["speed"] = speed
 
-    response = {'data': rows}
-    return JsonResponse(response)
+    #Get all distance data
+    query = """ SELECT DISTINCT ON (user_id)
+                user_id, distance, time
+                FROM shots S
+                WHERE S.user_id = %s
+                ORDER BY user_id, distance DESC, time;
+            """
+    cursor.execute(query, [user_id])
+    rows = cursor.fetchall()
+    max_distance = rows[0][1]
+    max_distance_time = rows[0][2]
+    distance = {}
+    distance["max_distance"] = max_distance
+    distance["max_distance_time"] = max_distance_time
+    query = """ SELECT AVG(distance)
+                FROM shots S
+                WHERE S.user_id = %s
+            """
+    cursor.execute(query, [user_id])
+    rows = cursor.fetchall()
+    avg_distance = rows[0][0]
+    distance["avg_distance"] = avg_distance
+    return_dict["distance"] = distance
+
+    # Get all hang time data
+    query = """ SELECT DISTINCT ON (user_id)
+                user_id, hang_time, time
+                FROM shots S
+                WHERE S.user_id = %s
+                ORDER BY user_id, hang_time DESC, time;
+            """
+    cursor.execute(query, [user_id])
+    rows = cursor.fetchall()
+    max_hang_time = rows[0][1]
+    max_hang_time_time = rows[0][2]
+    hang_time = {}
+    hang_time["max_hang_time"] = max_hang_time
+    hang_time["max_hang_time_time"] = max_hang_time_time
+    query = """ SELECT AVG(hang_time)
+                FROM shots S
+                WHERE S.user_id = %s
+            """
+    cursor.execute(query, [user_id])
+    rows = cursor.fetchall()
+    avg_hang_time = rows[0][0]
+    hang_time["avg_hang_time"] = avg_hang_time
+    return_dict["hang_time"] = hang_time
+
+    return JsonResponse(return_dict)
     
 
 # takes in user and number of shots you want
@@ -42,7 +98,7 @@ def get_shot_log(request, user_id, number):
     if request.method != 'GET':
         return HttpResponse(status=404)
     cursor = connection.cursor()
-
+    return_array = []
     query = """SELECT DISTINCT time, club, distance, launch_speed, launch_angle, hang_time
             FROM shots S
             WHERE S.user_id = %s
@@ -51,8 +107,16 @@ def get_shot_log(request, user_id, number):
         """
     cursor.execute(query, (user_id, number,))
     rows = cursor.fetchall()
-
-    response = {'data': rows}
+    for row in rows:
+        small_dict = {}
+        small_dict["time"] = row[0]
+        small_dict["club"] = row[1]
+        small_dict["distance"] = row[2]
+        small_dict["launch_speed"] = row[3]
+        small_dict["launch_angle"] = row[4]
+        small_dict["hang_time"] = row[5]
+        return_array.append(small_dict)
+    response = {'data': return_array}
     return JsonResponse(response)
 
 # get the most recent shot taken by the user
@@ -61,6 +125,7 @@ def get_user_last_shot(request, user_id):
     if request.method != 'GET':
         return HttpResponse(status=404)
     cursor = connection.cursor()
+    return_dict = {}
     query = """SELECT DISTINCT launch_angle, launch_speed, hang_time, distance, club, time
             FROM shots S
             WHERE S.user_id = %s
@@ -71,8 +136,14 @@ def get_user_last_shot(request, user_id):
     cursor.execute(query,[user_id])
     rows = cursor.fetchall()
 
-    response = {'data': rows}
-    return JsonResponse(response)
+    return_dict["launch_angle"] = rows[0][0]
+    return_dict["launch_speed"] = rows[0][1]
+    return_dict["hang_time"] = rows[0][2]
+    return_dict["distance"] = rows[0][3]
+    return_dict["club"] = rows[0][4]
+    return_dict["time"] = rows[0][5]
+
+    return JsonResponse(return_dict)
 
 
 # post shot takes in a userid, hand, club, and a video file

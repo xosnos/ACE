@@ -22,4 +22,5 @@ urlpatterns = [
     path('get_user_last_shot/<int:user_id>/', views.get_user_last_shot, name='get_user_last_shot'),
     path('post_shot/', views.post_shot, name='post_shot'),
     path('get_shot_log/<int:user_id>/<int:number>/', views.get_shot_log, name='get_shot_log'),
+    path('get_avgs_and_bests/<int:user_id>/', views.get_avgs_and_bests, name='get_avgs_and_bests'),
 ]
