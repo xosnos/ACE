@@ -67,7 +67,7 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBAction func submitChatt(_ sender: Any) {
         let chatt = Chatt(userid: "temp",
                                   hand: activeHand,
-                                  club: "iron",
+                                  club: activeClub,
                                   videoUrl: videoUrl?.absoluteString)
                 
         ChattStore.shared.postChatt(chatt)
@@ -79,8 +79,8 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
         videoUrl = info[UIImagePickerController.InfoKey.mediaURL] as? URL
         let chatt = Chatt(userid: "temp",
-                                  hand: "right",
-                                  club: "iron",
+                                  hand: activeHand,
+                                  club: activeClub,
                                   videoUrl: videoUrl?.absoluteString)
                 
         ChattStore.shared.postChatt(chatt)
