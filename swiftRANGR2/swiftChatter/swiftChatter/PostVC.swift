@@ -35,7 +35,7 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         imagePickerController.mediaTypes = ["public.movie"]
-        imagePickerController.videoMaximumDuration = TimeInterval(5) // secs
+        imagePickerController.videoMaximumDuration = TimeInterval(30) // secs
         imagePickerController.videoQuality = .typeHigh
         present(imagePickerController, animated: true, completion: nil)
         

@@ -29,7 +29,6 @@ final class ChattStore {
                 print("postChatt: Bad URL")
                 return
             }
-            print("here")
             AF.upload(multipartFormData: { mpFD in
                 if let userid = chatt.userid?.data(using: .utf8) {
                     mpFD.append(userid, withName: "user_id")
