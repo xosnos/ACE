@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x2S-cU-IQS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x2S-cU-IQS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -290,7 +290,7 @@
                                     <outlet property="launchAngleLabel" destination="LLM-mu-iXQ" id="5Xs-JJ-Erg"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i74-oe-hbo">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i74-oe-hbo" customClass="LaunchSpeedView" customModule="swiftChatter" customModuleProvider="target">
                                 <rect key="frame" x="20" y="322" width="374" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Launch Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1w4-jO-Qeo">
@@ -321,8 +321,11 @@
                                     <constraint firstItem="sM8-j2-fnV" firstAttribute="top" secondItem="i74-oe-hbo" secondAttribute="top" constant="16" id="peN-fH-pbM"/>
                                     <constraint firstItem="zCa-mq-3Xg" firstAttribute="top" secondItem="i74-oe-hbo" secondAttribute="top" constant="16" id="vYl-U1-dRC"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="launchSpeedLabel" destination="zCa-mq-3Xg" id="fvq-cH-ZEf"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSf-1l-DVh">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSf-1l-DVh" customClass="HangTimeView" customModule="swiftChatter" customModuleProvider="target">
                                 <rect key="frame" x="20" y="398" width="374" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hang Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwz-SW-tOh">
@@ -353,8 +356,11 @@
                                     <constraint firstAttribute="trailing" secondItem="ccK-TC-kSp" secondAttribute="trailing" constant="8" id="od8-II-nsq"/>
                                     <constraint firstItem="xdd-BV-Sup" firstAttribute="top" secondItem="aSf-1l-DVh" secondAttribute="top" constant="16" id="vrd-F7-u8V"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="hangTimeLabel" destination="xdd-BV-Sup" id="yXx-ix-NEh"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Anx-jm-jsB">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Anx-jm-jsB" customClass="DistanceView" customModule="swiftChatter" customModuleProvider="target">
                                 <rect key="frame" x="20" y="474" width="374" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLF-Lj-r6Y">
@@ -385,6 +391,9 @@
                                     <constraint firstItem="eGo-wr-7kJ" firstAttribute="leading" secondItem="AFx-fS-135" secondAttribute="trailing" constant="8" symbolic="YES" id="tX5-aa-Sf5"/>
                                     <constraint firstItem="AFx-fS-135" firstAttribute="top" secondItem="Anx-jm-jsB" secondAttribute="top" constant="16" id="uqL-KY-AWJ"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="distanceLabel" destination="AFx-fS-135" id="TkX-28-3p2"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="51Y-Vm-dc3"/>
@@ -411,10 +420,11 @@
                         </constraints>
                         <connections>
                             <outlet property="clubTypeLabel" destination="Txi-SC-j8H" id="e9U-VJ-Yfx"/>
-                            <outlet property="hangTimeLabel" destination="xdd-BV-Sup" id="bI2-0V-sKw"/>
+                            <outlet property="distanceLabel" destination="AFx-fS-135" id="wR4-eL-OaR"/>
+                            <outlet property="hangTimeLabel" destination="xdd-BV-Sup" id="51s-32-kFc"/>
                             <outlet property="launchAngelLabel" destination="LLM-mu-iXQ" id="W42-kY-Wbz"/>
                             <outlet property="launchAngleLabel" destination="LLM-mu-iXQ" id="PE9-M1-l42"/>
-                            <outlet property="launchSpeedLabel" destination="zCa-mq-3Xg" id="sex-Vb-hZp"/>
+                            <outlet property="launchSpeedLabel" destination="zCa-mq-3Xg" id="vif-ll-qI4"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="D7h-uD-5UD"/>

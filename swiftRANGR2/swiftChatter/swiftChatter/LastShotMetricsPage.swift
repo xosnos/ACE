@@ -22,6 +22,15 @@ final class LastShotMetricsPage:UIViewController {
         let launchAngleView = LaunchAngleView.self()
         launchAngleView.launchAngleLabel.text = metrics["launch_angle"]
         
+        let launchSpeedView = LaunchSpeedView.self()
+        launchSpeedView.launchSpeedLabel.text = metrics["launch_speed"]
+        
+        let hangTimeView = HangTimeView.self()
+        hangTimeView.hangTimeLabel.text = metrics["hang_time"]
+        
+        let distanceView = DistanceView.self()
+        distanceView.distanceLabel.text = metrics["distance"]
+        
         
     }
 
