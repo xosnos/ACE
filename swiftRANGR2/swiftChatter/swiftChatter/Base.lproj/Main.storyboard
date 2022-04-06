@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x2S-cU-IQS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x2S-cU-IQS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -34,21 +34,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-A2-ixw">
-                                <rect key="frame" x="20" y="130" width="374" height="68"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="eKi-wg-0fa"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Left" titleAlignment="center"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-Hq-h89">
-                                <rect key="frame" x="20" y="233" width="374" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-Hq-h89" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
+                                <rect key="frame" x="20" y="480" width="374" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="yle-CY-xNf"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Right" titleAlignment="center"/>
+                                <connections>
+                                    <action selector="rightHand:" destination="mgx-li-1nV" eventType="touchUpInside" id="dEg-6A-sEJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-A2-ixw" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
+                                <rect key="frame" x="20" y="337" width="374" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="eKi-wg-0fa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Left" titleAlignment="center"/>
+                                <connections>
+                                    <action selector="leftHand:" destination="mgx-li-1nV" eventType="touchUpInside" id="djA-UB-6LO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pt4-f2-G3n"/>
@@ -65,6 +71,7 @@
                     <navigationItem key="navigationItem" title="Select Handedness" id="hxQ-x4-hE0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqb-ph-ElV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="mgx-li-1nV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-459.4202898550725" y="-1418.3035714285713"/>
         </scene>
@@ -93,37 +100,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh3-o5-zR1">
-                                <rect key="frame" x="20" y="121" width="374" height="68"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="Fc4-g7-adS"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Driver" titleAlignment="center"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6k-4v-7Sj">
-                                <rect key="frame" x="20" y="208" width="374" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6k-4v-7Sj" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
+                                <rect key="frame" x="20" y="330" width="374" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="cP6-Rx-ndF"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Wood" titleAlignment="center"/>
+                                <connections>
+                                    <action selector="pickWood:" destination="2mo-29-dN6" eventType="touchUpInside" id="4g8-7h-Ttb"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olM-8N-5Yd">
-                                <rect key="frame" x="20" y="298" width="374" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olM-8N-5Yd" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
+                                <rect key="frame" x="20" y="441" width="374" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="cje-dn-vaJ"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Iron" titleAlignment="center"/>
+                                <connections>
+                                    <action selector="pickIron:" destination="2mo-29-dN6" eventType="touchUpInside" id="aFN-45-qtz"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQQ-MC-h5v">
-                                <rect key="frame" x="20" y="390" width="374" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQQ-MC-h5v" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
+                                <rect key="frame" x="20" y="554" width="374" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="9WF-Da-id9"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Wedge" titleAlignment="center"/>
+                                <connections>
+                                    <action selector="pickWedge:" destination="2mo-29-dN6" eventType="touchUpInside" id="pj4-Qp-AO6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh3-o5-zR1" customClass="HighlightedButton">
+                                <rect key="frame" x="20" y="220" width="374" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="Fc4-g7-adS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Driver" titleAlignment="center"/>
+                                <connections>
+                                    <action selector="pickDriver:" destination="2mo-29-dN6" eventType="touchUpInside" id="5pK-we-NkA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oHd-zb-9FQ"/>
@@ -146,6 +165,7 @@
                     <navigationItem key="navigationItem" title="Select Club" id="fEa-gl-OLt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50d-1e-50C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="2mo-29-dN6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-439.13043478260875" y="-666.29464285714278"/>
         </scene>

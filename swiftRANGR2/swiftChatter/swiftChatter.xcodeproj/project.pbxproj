@@ -22,6 +22,7 @@
 		B3F221D32790EA3F003283ED /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F221D22790EA3F003283ED /* PostVC.swift */; };
 		B3F221D52790EC5F003283ED /* ChattTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F221D42790EC5F003283ED /* ChattTableCell.swift */; };
 		B3F221D72790ECBB003283ED /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F221D62790ECBB003283ED /* MainVC.swift */; };
+		DF6E977D27FCFD7500D7A6A5 /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6E977C27FCFD7500D7A6A5 /* HighlightedButton.swift */; };
 		FD17F84187E0D47276425CA9 /* Pods_swiftChatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D2C46F754F0C7886FC6DC0 /* Pods_swiftChatter.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		B3F221D22790EA3F003283ED /* PostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 		B3F221D42790EC5F003283ED /* ChattTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattTableCell.swift; sourceTree = "<group>"; };
 		B3F221D62790ECBB003283ED /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		DF6E977C27FCFD7500D7A6A5 /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				B3F221C32790D085003283ED /* Assets.xcassets */,
 				B3F221C52790D085003283ED /* LaunchScreen.storyboard */,
 				B3F221C82790D085003283ED /* Info.plist */,
+				DF6E977C27FCFD7500D7A6A5 /* HighlightedButton.swift */,
 				B3F221CE2790E89C003283ED /* Chatt.swift */,
 				B3F221D02790E8C2003283ED /* ChattStore.swift */,
 				B3F221D42790EC5F003283ED /* ChattTableCell.swift */,
@@ -244,6 +247,7 @@
 				B3F221CF2790E89C003283ED /* Chatt.swift in Sources */,
 				B3F221BD2790D084003283ED /* SceneDelegate.swift in Sources */,
 				A47191AD27E4B89500F3917C /* Metrics.swift in Sources */,
+				DF6E977D27FCFD7500D7A6A5 /* HighlightedButton.swift in Sources */,
 				B3F221D12790E8C2003283ED /* ChattStore.swift in Sources */,
 				B3F221D72790ECBB003283ED /* MainVC.swift in Sources */,
 				A47191B127E4B8A200F3917C /* MetricsTableVC.swift in Sources */,
