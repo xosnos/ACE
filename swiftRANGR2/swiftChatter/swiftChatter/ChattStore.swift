@@ -88,16 +88,17 @@ final class ChattStore {
             }
 
 
-            self.jsonObject = jsonObj
+            self.jsonObject = [
+                "launch_angle": jsonObj["launch_angle"]!,
+                "launch_speed": jsonObj["launch_speed"]!,
+                "hang_time": jsonObj["hang_time"]!,
+                "distance": jsonObj["distance"]!,
+                "club": jsonObj["club"]!,
+                "time": jsonObj["time"]!]
             success = true
 
         }.resume() // AF.request
-//        let temp = ["launch_angle": self.jsonObject["launch_angle"],
-//                "launch_speed": self.jsonObject["launch_speed"],
-//                "hang_time": self.jsonObject["hang_time"],
-//                "distance": self.jsonObject["distance"],
-//                "club": self.jsonObject["club"],
-//                "time": self.jsonObject["time"]]
+//        let temp
 //        print(temp)
         return
     } // getChatts

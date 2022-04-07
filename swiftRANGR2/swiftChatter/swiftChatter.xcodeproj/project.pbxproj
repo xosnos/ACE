@@ -8,16 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2E6EFF9C27A9AD6900F9ECDF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6EFF9B27A9AD6900F9ECDF /* Extensions.swift */; };
-		2ECDCEB527FE430500B1AA52 /* launchSpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECDCEB427FE430500B1AA52 /* launchSpeedView.swift */; };
 		2ECDCEB727FE446300B1AA52 /* distanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECDCEB627FE446300B1AA52 /* distanceView.swift */; };
 		2ECDCEB927FE44E900B1AA52 /* hangTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECDCEB827FE44E900B1AA52 /* hangTimeView.swift */; };
 		A47191AB27E4B88900F3917C /* MetricsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191AA27E4B88900F3917C /* MetricsStore.swift */; };
 		A47191AD27E4B89500F3917C /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191AC27E4B89500F3917C /* Metrics.swift */; };
 		A47191B127E4B8A200F3917C /* MetricsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191B027E4B8A200F3917C /* MetricsTableVC.swift */; };
 		A47191B327E4BBD700F3917C /* MetricsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191B227E4BBD700F3917C /* MetricsTableCell.swift */; };
-		B3F1D8A227FE394500AFA213 /* clubTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1D8A127FE394500AFA213 /* clubTypeView.swift */; };
 		B3F1D8A427FE3B8900AFA213 /* LastShotMetricsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1D8A327FE3B8900AFA213 /* LastShotMetricsPage.swift */; };
-		B3F1D8A627FE41EE00AFA213 /* launchAngleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1D8A527FE41EE00AFA213 /* launchAngleView.swift */; };
 		B3F221BB2790D084003283ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F221BA2790D084003283ED /* AppDelegate.swift */; };
 		B3F221BD2790D084003283ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F221BC2790D084003283ED /* SceneDelegate.swift */; };
 		B3F221C22790D084003283ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F221C02790D084003283ED /* Main.storyboard */; };
@@ -34,7 +31,6 @@
 
 /* Begin PBXFileReference section */
 		2E6EFF9B27A9AD6900F9ECDF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		2ECDCEB427FE430500B1AA52 /* launchSpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchSpeedView.swift; sourceTree = "<group>"; };
 		2ECDCEB627FE446300B1AA52 /* distanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = distanceView.swift; sourceTree = "<group>"; };
 		2ECDCEB827FE44E900B1AA52 /* hangTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hangTimeView.swift; sourceTree = "<group>"; };
 		414871B382B51B061DD95C33 /* Pods-swiftChatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftChatter.release.xcconfig"; path = "Target Support Files/Pods-swiftChatter/Pods-swiftChatter.release.xcconfig"; sourceTree = "<group>"; };
@@ -45,9 +41,7 @@
 		A47191B027E4B8A200F3917C /* MetricsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricsTableVC.swift; sourceTree = "<group>"; };
 		A47191B227E4BBD700F3917C /* MetricsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsTableCell.swift; sourceTree = "<group>"; };
 		B369BF1427978CF8002C243B /* selfsigned.crt */ = {isa = PBXFileReference; lastKnownFileType = file; name = selfsigned.crt; path = ../../../selfsigned.crt; sourceTree = "<group>"; };
-		B3F1D8A127FE394500AFA213 /* clubTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clubTypeView.swift; sourceTree = "<group>"; };
 		B3F1D8A327FE3B8900AFA213 /* LastShotMetricsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastShotMetricsPage.swift; sourceTree = "<group>"; };
-		B3F1D8A527FE41EE00AFA213 /* launchAngleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchAngleView.swift; sourceTree = "<group>"; };
 		B3F221B72790D084003283ED /* swiftChatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftChatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F221BA2790D084003283ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3F221BC2790D084003283ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,11 +115,8 @@
 				B3F221BA2790D084003283ED /* AppDelegate.swift */,
 				B3F221BC2790D084003283ED /* SceneDelegate.swift */,
 				B3F1D8A327FE3B8900AFA213 /* LastShotMetricsPage.swift */,
-				B3F1D8A127FE394500AFA213 /* clubTypeView.swift */,
-				B3F1D8A527FE41EE00AFA213 /* launchAngleView.swift */,
 				2ECDCEB627FE446300B1AA52 /* distanceView.swift */,
 				2ECDCEB827FE44E900B1AA52 /* hangTimeView.swift */,
-				2ECDCEB427FE430500B1AA52 /* launchSpeedView.swift */,
 				B3F221C02790D084003283ED /* Main.storyboard */,
 				B3F221C32790D085003283ED /* Assets.xcassets */,
 				B3F221C52790D085003283ED /* LaunchScreen.storyboard */,
@@ -264,15 +255,12 @@
 				B3F221BB2790D084003283ED /* AppDelegate.swift in Sources */,
 				A47191AB27E4B88900F3917C /* MetricsStore.swift in Sources */,
 				2E6EFF9C27A9AD6900F9ECDF /* Extensions.swift in Sources */,
-				B3F1D8A227FE394500AFA213 /* clubTypeView.swift in Sources */,
 				B3F221CF2790E89C003283ED /* Chatt.swift in Sources */,
 				B3F221BD2790D084003283ED /* SceneDelegate.swift in Sources */,
 				A47191AD27E4B89500F3917C /* Metrics.swift in Sources */,
-				2ECDCEB527FE430500B1AA52 /* launchSpeedView.swift in Sources */,
 				DF6E977D27FCFD7500D7A6A5 /* HighlightedButton.swift in Sources */,
 				B3F1D8A427FE3B8900AFA213 /* LastShotMetricsPage.swift in Sources */,
 				B3F221D12790E8C2003283ED /* ChattStore.swift in Sources */,
-				B3F1D8A627FE41EE00AFA213 /* launchAngleView.swift in Sources */,
 				B3F221D72790ECBB003283ED /* MainVC.swift in Sources */,
 				A47191B127E4B8A200F3917C /* MetricsTableVC.swift in Sources */,
 			);

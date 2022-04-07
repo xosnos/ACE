@@ -228,7 +228,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXt-xc-s53" customClass="ClubTypeView" customModule="swiftChatter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXt-xc-s53">
                                 <rect key="frame" x="20" y="170" width="374" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POx-gd-oP3">
@@ -251,11 +251,8 @@
                                     <constraint firstAttribute="trailing" secondItem="Txi-SC-j8H" secondAttribute="trailing" constant="8" id="6bb-fy-FnZ"/>
                                     <constraint firstAttribute="height" constant="52" id="wa1-ui-Zte"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="clubTypeLabel" destination="Txi-SC-j8H" id="wvB-G9-G7i"/>
-                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyS-E0-d5j" customClass="LaunchAngleView" customModule="swiftChatter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyS-E0-d5j">
                                 <rect key="frame" x="20" y="246" width="374" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lauch Angle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GT-A0-djb">
@@ -286,11 +283,8 @@
                                     <constraint firstItem="Eqt-jz-5VF" firstAttribute="top" secondItem="CyS-E0-d5j" secondAttribute="top" constant="8" id="arg-8r-Odx"/>
                                     <constraint firstAttribute="height" constant="52" id="qom-jc-q7l"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="launchAngleLabel" destination="LLM-mu-iXQ" id="5Xs-JJ-Erg"/>
-                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i74-oe-hbo" customClass="LaunchSpeedView" customModule="swiftChatter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i74-oe-hbo">
                                 <rect key="frame" x="20" y="322" width="374" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Launch Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1w4-jO-Qeo">
@@ -321,11 +315,8 @@
                                     <constraint firstItem="sM8-j2-fnV" firstAttribute="top" secondItem="i74-oe-hbo" secondAttribute="top" constant="16" id="peN-fH-pbM"/>
                                     <constraint firstItem="zCa-mq-3Xg" firstAttribute="top" secondItem="i74-oe-hbo" secondAttribute="top" constant="16" id="vYl-U1-dRC"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="launchSpeedLabel" destination="zCa-mq-3Xg" id="vMl-Nc-Vwy"/>
-                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSf-1l-DVh" customClass="HangTimeView" customModule="swiftChatter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSf-1l-DVh">
                                 <rect key="frame" x="20" y="398" width="374" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hang Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwz-SW-tOh">
@@ -360,7 +351,7 @@
                                     <outlet property="hangTimeLabel" destination="xdd-BV-Sup" id="yXx-ix-NEh"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Anx-jm-jsB" customClass="DistanceView" customModule="swiftChatter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Anx-jm-jsB">
                                 <rect key="frame" x="20" y="474" width="374" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLF-Lj-r6Y">
@@ -420,6 +411,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D7h-uD-5UD"/>
+                    <connections>
+                        <outlet property="clubLabel" destination="POx-gd-oP3" id="blE-CE-dc1"/>
+                        <outlet property="clubTypeLabel" destination="Txi-SC-j8H" id="H8Z-2O-ez1"/>
+                        <outlet property="degreeLabel" destination="Eqt-jz-5VF" id="qB5-NV-ph0"/>
+                        <outlet property="launchAngleLabel" destination="7GT-A0-djb" id="MmK-zK-weh"/>
+                        <outlet property="launchAngleLabelValue" destination="LLM-mu-iXQ" id="fck-bF-D7J"/>
+                        <outlet property="launchSpeedLabel" destination="1w4-jO-Qeo" id="1AE-Pj-K0v"/>
+                        <outlet property="launchSpeedLabelValue" destination="zCa-mq-3Xg" id="OSm-bZ-Ybq"/>
+                        <outlet property="mphLabel" destination="sM8-j2-fnV" id="H9s-Sb-nYG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXq-3K-xMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

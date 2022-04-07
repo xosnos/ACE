@@ -10,6 +10,17 @@ import UIKit
 
 final class LastShotMetricsPage:UIViewController {
 
+    @IBOutlet weak var clubLabel: UILabel!
+    @IBOutlet weak var clubTypeLabel: UILabel!
+
+    @IBOutlet weak var launchAngleLabel: UILabel!
+    @IBOutlet weak var launchAngleLabelValue: UILabel!
+    @IBOutlet weak var degreeLabel: UILabel!
+    
+    @IBOutlet weak var launchSpeedLabel: UILabel!
+    @IBOutlet weak var launchSpeedLabelValue: UILabel!
+    @IBOutlet weak var mphLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.makeGetRequest()
@@ -27,23 +38,17 @@ final class LastShotMetricsPage:UIViewController {
     
     func setValues() {
         let metrics = ChattStore.shared.jsonObject
-        print("METRICS ---------------------")
         print(metrics)
-        
-        let clubTypeView = ClubTypeView.self()
-        clubTypeView.clubTypeLabel.text = metrics["club"] ?? "N/A"
+        self.clubTypeLabel.text = metrics["club"] ?? "N/A"
+        self.launchAngleLabelValue.text = metrics["launch_angle"] ?? "N/A"
+        self.launchAngleLabelValue.text = metrics["launch_speed"] ?? "N/A"
 
-        let launchAngleView = LaunchAngleView.self()
-        launchAngleView.launchAngleLabel.text = metrics["launch_angle"] ?? "N/A"
-
-        let launchSpeedView = LaunchSpeedView.self()
-        launchSpeedView.launchSpeedLabel.text = metrics["launch_speed"] ?? "N/A"
-
-        let hangTimeView = HangTimeView.self()
-        hangTimeView.hangTimeLabel.text = metrics["hang_time"] ?? "N/A"
-
-        let distanceView = DistanceView.self()
-        distanceView.distanceLabel.text = metrics["distance"] ?? "N/A"
+//
+//        let hangTimeView = HangTimeView()
+//        hangTimeView.hangTimeLabel.text = metrics["hang_time"] ?? "N/A"
+//
+//        let distanceView = DistanceView()
+//        distanceView.distanceLabel.text = metrics["distance"] ?? "N/A"
     }
     
 } // LastShotMetricsPage
