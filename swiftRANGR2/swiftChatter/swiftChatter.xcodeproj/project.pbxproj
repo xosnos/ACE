@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2E6EFF9C27A9AD6900F9ECDF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6EFF9B27A9AD6900F9ECDF /* Extensions.swift */; };
-		2ECDCEB727FE446300B1AA52 /* distanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECDCEB627FE446300B1AA52 /* distanceView.swift */; };
-		2ECDCEB927FE44E900B1AA52 /* hangTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECDCEB827FE44E900B1AA52 /* hangTimeView.swift */; };
 		A47191AB27E4B88900F3917C /* MetricsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191AA27E4B88900F3917C /* MetricsStore.swift */; };
 		A47191AD27E4B89500F3917C /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191AC27E4B89500F3917C /* Metrics.swift */; };
 		A47191B127E4B8A200F3917C /* MetricsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47191B027E4B8A200F3917C /* MetricsTableVC.swift */; };
@@ -31,8 +29,6 @@
 
 /* Begin PBXFileReference section */
 		2E6EFF9B27A9AD6900F9ECDF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		2ECDCEB627FE446300B1AA52 /* distanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = distanceView.swift; sourceTree = "<group>"; };
-		2ECDCEB827FE44E900B1AA52 /* hangTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hangTimeView.swift; sourceTree = "<group>"; };
 		414871B382B51B061DD95C33 /* Pods-swiftChatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftChatter.release.xcconfig"; path = "Target Support Files/Pods-swiftChatter/Pods-swiftChatter.release.xcconfig"; sourceTree = "<group>"; };
 		6E8EB81ADC47EF7FF7414133 /* Pods-swiftChatter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftChatter.debug.xcconfig"; path = "Target Support Files/Pods-swiftChatter/Pods-swiftChatter.debug.xcconfig"; sourceTree = "<group>"; };
 		95D2C46F754F0C7886FC6DC0 /* Pods_swiftChatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftChatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,8 +111,6 @@
 				B3F221BA2790D084003283ED /* AppDelegate.swift */,
 				B3F221BC2790D084003283ED /* SceneDelegate.swift */,
 				B3F1D8A327FE3B8900AFA213 /* LastShotMetricsPage.swift */,
-				2ECDCEB627FE446300B1AA52 /* distanceView.swift */,
-				2ECDCEB827FE44E900B1AA52 /* hangTimeView.swift */,
 				B3F221C02790D084003283ED /* Main.storyboard */,
 				B3F221C32790D085003283ED /* Assets.xcassets */,
 				B3F221C52790D085003283ED /* LaunchScreen.storyboard */,
@@ -248,9 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A47191B327E4BBD700F3917C /* MetricsTableCell.swift in Sources */,
-				2ECDCEB727FE446300B1AA52 /* distanceView.swift in Sources */,
 				B3F221D32790EA3F003283ED /* PostVC.swift in Sources */,
-				2ECDCEB927FE44E900B1AA52 /* hangTimeView.swift in Sources */,
 				B3F221D52790EC5F003283ED /* ChattTableCell.swift in Sources */,
 				B3F221BB2790D084003283ED /* AppDelegate.swift in Sources */,
 				A47191AB27E4B88900F3917C /* MetricsStore.swift in Sources */,

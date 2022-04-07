@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x2S-cU-IQS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x2S-cU-IQS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -347,9 +347,6 @@
                                     <constraint firstAttribute="trailing" secondItem="ccK-TC-kSp" secondAttribute="trailing" constant="8" id="od8-II-nsq"/>
                                     <constraint firstItem="xdd-BV-Sup" firstAttribute="top" secondItem="aSf-1l-DVh" secondAttribute="top" constant="16" id="vrd-F7-u8V"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="hangTimeLabel" destination="xdd-BV-Sup" id="yXx-ix-NEh"/>
-                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Anx-jm-jsB">
                                 <rect key="frame" x="20" y="474" width="374" height="52"/>
@@ -382,9 +379,6 @@
                                     <constraint firstItem="eGo-wr-7kJ" firstAttribute="leading" secondItem="AFx-fS-135" secondAttribute="trailing" constant="8" symbolic="YES" id="tX5-aa-Sf5"/>
                                     <constraint firstItem="AFx-fS-135" firstAttribute="top" secondItem="Anx-jm-jsB" secondAttribute="top" constant="16" id="uqL-KY-AWJ"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="distanceLabel" destination="AFx-fS-135" id="TkX-28-3p2"/>
-                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="51Y-Vm-dc3"/>
@@ -415,11 +409,17 @@
                         <outlet property="clubLabel" destination="POx-gd-oP3" id="blE-CE-dc1"/>
                         <outlet property="clubTypeLabel" destination="Txi-SC-j8H" id="H8Z-2O-ez1"/>
                         <outlet property="degreeLabel" destination="Eqt-jz-5VF" id="qB5-NV-ph0"/>
+                        <outlet property="distanceLabel" destination="XLF-Lj-r6Y" id="fPx-TO-jjL"/>
+                        <outlet property="distanceLabelValue" destination="AFx-fS-135" id="mMo-H8-nTW"/>
+                        <outlet property="hangTimeLabel" destination="cwz-SW-tOh" id="3vT-DU-wJ1"/>
+                        <outlet property="hangTimeLabelValue" destination="xdd-BV-Sup" id="QGR-93-0N7"/>
                         <outlet property="launchAngleLabel" destination="7GT-A0-djb" id="MmK-zK-weh"/>
                         <outlet property="launchAngleLabelValue" destination="LLM-mu-iXQ" id="fck-bF-D7J"/>
                         <outlet property="launchSpeedLabel" destination="1w4-jO-Qeo" id="1AE-Pj-K0v"/>
                         <outlet property="launchSpeedLabelValue" destination="zCa-mq-3Xg" id="OSm-bZ-Ybq"/>
                         <outlet property="mphLabel" destination="sM8-j2-fnV" id="H9s-Sb-nYG"/>
+                        <outlet property="secLabel" destination="ccK-TC-kSp" id="cEr-jo-iiW"/>
+                        <outlet property="ydsLabel" destination="eGo-wr-7kJ" id="fel-da-RpR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXq-3K-xMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
