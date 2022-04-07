@@ -49,7 +49,7 @@ final class LastShotMetricsPage:UIViewController {
         print(metrics)
         self.clubTypeLabel.text = metrics["club"] ?? "N/A"
         self.launchAngleLabelValue.text = metrics["launch_angle"] ?? "N/A"
-        self.launchAngleLabelValue.text = metrics["launch_speed"] ?? "N/A"
+        self.launchSpeedLabelValue.text = metrics["launch_speed"] ?? "N/A"
         self.hangTimeLabelValue.text = metrics["hang_time"] ?? "N/A"
         self.distanceLabelValue.text = metrics["distance"] ?? "N/A"
 
