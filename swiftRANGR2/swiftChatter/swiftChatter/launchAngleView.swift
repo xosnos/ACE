@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-final class LaunchAngleView {
-    
+final class LaunchAngleView:UIView {
     @IBOutlet weak var launchAngleLabel: UILabel!
 }

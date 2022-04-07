@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-final class DistanceView {
-    
+final class DistanceView:UIView {
     @IBOutlet weak var distanceLabel: UILabel!
 }

@@ -50,7 +50,6 @@ final class ChattStore {
             }, to: apiUrl, method: .post).response { response in
                 switch (response.result) {
                 case .success:
-                    self.getChatts()
                     print("postChatt: chatt posted!")
                 case .failure:
                     print("postChatt: posting failed")
@@ -60,32 +59,47 @@ final class ChattStore {
 
     
 
-    func getChatts() {
-        
-        
+    func getChatts(_ completion: ((Bool) -> ())?) {
         guard let apiUrl = URL(string: serverUrl+"get_user_last_shot/"+String(userid)) else {
             print("getChatts: bad URL")
             return
         }
+
         // for each thing get_user_last_shot/userid ... hand ...
-        AF.request(apiUrl, method: .get).responseJSON { response in
-            guard let data = response.data, response.error == nil else {
-                print("getChatts: NETWORKING ERROR")
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "GET"
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            var success = false
+            defer { completion?(success) }
+            
+            guard let data = data, error == nil else {
+                print("GET: NETWORKING ERROR")
                 return
             }
-            if let httpStatus = response.response, httpStatus.statusCode != 200 {
-                print("getChatts: HTTP STATUS: \(httpStatus.statusCode)")
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("GET: HTTP STATUS: \(httpStatus.statusCode)")
+                return
+            }
+            
+            guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:String] else {
+                print("GET: failed JSON deserialization")
                 return
             }
 
-            guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:String] else {
-                print("getChatts: failed JSON deserialization")
-                return
-            }
-            
+
             self.jsonObject = jsonObj
-            
-        }
-    }
+            success = true
+
+        }.resume() // AF.request
+//        let temp = ["launch_angle": self.jsonObject["launch_angle"],
+//                "launch_speed": self.jsonObject["launch_speed"],
+//                "hang_time": self.jsonObject["hang_time"],
+//                "distance": self.jsonObject["distance"],
+//                "club": self.jsonObject["club"],
+//                "time": self.jsonObject["time"]]
+//        print(temp)
+        return
+    } // getChatts
 } // class ChattStore
 

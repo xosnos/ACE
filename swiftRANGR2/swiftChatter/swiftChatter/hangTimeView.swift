@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-final class HangTimeView {
-    
+final class HangTimeView:UIView {
     @IBOutlet weak var hangTimeLabel: UILabel!
 }

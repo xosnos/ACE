@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-final class LaunchSpeedView {
-    
+final class LaunchSpeedView:UIView {
     @IBOutlet weak var launchSpeedLabel: UILabel!
 }

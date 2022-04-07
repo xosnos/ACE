@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-final class ClubTypeView {
+final class ClubTypeView:UIView {
     @IBOutlet weak var clubTypeLabel: UILabel!
 }
