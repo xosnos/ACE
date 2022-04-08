@@ -53,8 +53,8 @@ final class MainVC: UITableViewController {
             fatalError("No reusable cell!")
         }
         
-        let chatt = ChattStore.shared.chatts[indexPath.row]
-        cell.backgroundColor = (indexPath.row % 2 == 0) ? .systemGray5 : .systemGray6
+//        let chatt = ChattStore.shared.chatts[indexPath.row]
+//        cell.backgroundColor = (indexPath.row % 2 == 0) ? .systemGray5 : .systemGray6
 //        cell.usernameLabel.text = chatt.username
 //        cell.messageLabel.text = chatt.message
 //        cell.timestampLabel.text = chatt.timestamp
