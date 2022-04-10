@@ -19,9 +19,14 @@ class LoginVC : UIViewController {
         let username = usernameField.text
         let password = passwordField.text
         if username != "" && password != "" {
-            // GET REQUEST TO GET USERID
-            // SET USERID
-            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            User.shared.mockLogin(username!, password!) { success in
+//            User.shared.login(username!, password!) { success in
+                DispatchQueue.main.async {
+                    if success {
+                        self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                    }
+                }
+            }
         } else {
             print("Error: Username or password not filled in")
         }
@@ -31,8 +36,10 @@ class LoginVC : UIViewController {
         let username = usernameField.text
         let password = passwordField.text
         if username != "" && password != "" {
-            // POST REQUEST
-            onLogin(self)
+            User.shared.mockCreate(username!, password!)
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+//            User.shared.create(username!, password!)
+//            onLogin(self)
         } else {
             print("Error: Username or password not filled in")
         }
