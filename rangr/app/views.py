@@ -10,6 +10,8 @@ from django.db import connection
 import numpy as np
 import cv2
 import math
+import hashlib
+import uuid
 
 def get_avgs_and_bests(request, user_id):
     if request.method != 'GET':
@@ -146,6 +148,102 @@ def get_user_last_shot(request, user_id):
     return JsonResponse(return_dict)
 
 
+@csrf_exempt
+def account_create(request):
+    """Create account by adding username and password to DB."""
+    if request.method != 'POST':
+        return HttpResponse(status=400)
+    
+    username = request.POST.get("username")
+    pwd = request.POST.get("password")
+
+    # Empty argument checking
+    if not username or not pwd:
+        return HttpResponse(status=400)
+
+    # See if username already exists
+    cursor = connection.cursor()
+    query = """SELECT username, user_id, password
+            FROM users u
+            WHERE u.username = %s;
+            """
+    
+    cursor.execute(query,[username])
+    rows = cursor.fetchall()
+
+    if len(rows) != 0:
+        return HttpResponse(status=409)
+
+    # Generate hashed password
+    algo = 'sha512'
+    salt = uuid.uuid4().hex
+    hash_obj = hashlib.new(algo)
+    salted_pwd = salt + pwd
+    hash_obj.update(salted_pwd.encode('utf-8'))
+    hashed_pwd = hash_obj.hexdigest()
+    db_pwd = '$'.join([algo, salt, hashed_pwd])
+
+    # Create user in db and return new user_id
+    query = """INSERT INTO users
+            (username, password)
+            VALUES (%s, %s);
+
+            SELECT user_id
+            FROM users
+            WHERE username = %s;
+            """
+    cursor.execute(query, (username, db_pwd, username))
+    rows = cursor.fetchall()
+    user_id = rows[0][0]
+
+    return JsonResponse({'user_id': user_id})
+
+
+@csrf_exempt
+def account_login(request):
+    """Login to account and return user_id."""
+    if request.method != 'POST':
+        return HttpResponse(status=400)
+
+    username = request.POST.get("username")
+    pwd = request.POST.get("password")
+
+    # Empty argument checking
+    if not username or not pwd:
+        return HttpResponse(status=400)
+
+    # See if user exists
+    cursor = connection.cursor()
+    query = """SELECT username, user_id, password
+            FROM users u
+            WHERE u.username = %s;
+            """
+    
+    cursor.execute(query,[username])
+    rows = cursor.fetchall()
+
+    # User doesn't exist
+    if len(rows) == 0:
+        return HttpResponse(status=403)
+
+    _, user_id, db_pwd = rows[0]
+
+    # Password comparison
+    algo_db_pwd, salt_db_pwd, hashed_db_pwd = db_pwd.split('$')
+    hash_obj = hashlib.new(algo_db_pwd)
+
+    salted_pwd = salt_db_pwd + pwd
+    hash_obj.update(salted_pwd.encode('utf-8'))
+    hashed_pwd = hash_obj.hexdigest()
+
+    # Incorrect password
+    if hashed_pwd != hashed_db_pwd:
+        return HttpResponse(status=403)
+    
+    # Successful login, return user_id
+    return JsonResponse({'user_id': rows[0][1]})
+
+
 # post shot takes in a userid, hand, club, and a video file
 @csrf_exempt
 def post_shot(request):
@@ -190,6 +288,7 @@ def post_shot(request):
     cursor.execute(query, (user_id, launch_speed, launch_angle, hang_time, distance, club, hand))
 
     return JsonResponse({})
+
 
 # plot ball path
 def get_ball_points(filename, hand):
