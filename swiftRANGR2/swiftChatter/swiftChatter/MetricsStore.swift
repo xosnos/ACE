@@ -42,20 +42,18 @@ final class MetricsStore {
                 print("GET: failed JSON deserialization")
                 return
             }
-            let dataReceived = jsonObj["data"] as? [[String?]] ?? []
+            let dataReceived = jsonObj["data"] as? [Any] ?? []
             self.log = [Metrics]()
             for entry in dataReceived {
-                if entry.count == self.nFields {
-                    self.log.append(Metrics(
-                        timeStamp: entry[0],
-                        club: entry[1],
-                        launchAngle: entry[4],
-                        launchSpeed: entry[3],
-                        hangTime: entry[5],
-                        distance: entry[2]))
-                } else {
-                    print("GET: Received unexpected number of fields: \(entry.count) instead of \(self.nFields).")
-                }
+                let dict = (entry as! [String:String?])
+                self.log.append(Metrics(
+                    timeStamp: dict["time"]!,
+                    club: dict["club"]!,
+                    launchAngle: dict["launch_angle"]!,
+                    launchSpeed: dict["launch_speed"]!,
+                    hangTime: dict["hang_time"]!,
+                    distance: dict["distance"]!
+                ))
             }
             success = true
         }.resume()
