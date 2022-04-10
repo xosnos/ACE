@@ -27,7 +27,7 @@ final class ChattStore {
     private let serverUrl = "https://34.70.39.80/"
     // Once you have your own back-end server set up, you will replace mobapp.eecs.umich.edu with your server’s IP address.
 
-    private let userid = 1
+    private let userid = User.shared.userid
     
     func postChatt(_ chatt: Chatt) {
             guard let apiUrl = URL(string: serverUrl+"post_shot/") else {
