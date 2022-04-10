@@ -16,8 +16,10 @@ final class MetricsStore {
 
     private let serverUrl = "https://34.70.39.80/"
     
+    private let userid = 1
+    
     func getShotLog(_ completion: ((Bool) -> ())?) {
-        guard let apiUrl = URL(string: serverUrl + "get_shot_log/1/10/") else {
+        guard let apiUrl = URL(string: serverUrl + "get_shot_log/" + String(userid) + "/10/") else {
             print("GET: Bad URL")
             return
         }
