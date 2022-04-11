@@ -9,11 +9,11 @@ import UIKit
 
 final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-    @IBOutlet weak var SignInOutLabel: UIBarButtonItem!
+    @IBOutlet weak var SignInOutLabel: UIButton!
     
     @IBAction func SignInOut(_ sender: Any) {
         User.shared.userid = 0
+        User.shared.loggedIn = false
     }
     
     
@@ -23,7 +23,11 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     private var activeClub = "driver"
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if User.shared.loggedIn {
+            SignInOutLabel.setTitle("Sign Out", for: .normal)
+        } else {
+            SignInOutLabel.setTitle("Sign In", for: .normal)
+        }
     }
     @IBAction func pickMedia(_ sender: Any) {
             presentPicker(.photoLibrary)
