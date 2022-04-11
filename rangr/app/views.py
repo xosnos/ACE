@@ -7,91 +7,12 @@ import json
 from django.db import connection
 
 
+import datetime
 import numpy as np
 import cv2
 import math
 import hashlib
 import uuid
-
-def get_avgs_and_bests(request, user_id):
-    if request.method != 'GET':
-        return HttpResponse(status=404)
-    cursor = connection.cursor()
-    return_dict = {}
-
-    # Get all speed data
-    query = """ SELECT DISTINCT ON (user_id)
-                user_id, launch_speed, time
-                FROM shots S
-                WHERE S.user_id = %s
-                ORDER BY user_id, launch_speed DESC, time;
-            """
-    cursor.execute(query, [user_id])
-    rows = cursor.fetchall()
-    max_speed = rows[0][1]
-    max_speed_time = rows[0][2]
-    speed = {}
-    speed["max_speed"] = max_speed
-    speed["max_speed_time"] = max_speed_time
-    query = """ SELECT AVG(launch_speed)
-                FROM shots S
-                WHERE S.user_id = %s
-            """
-    cursor.execute(query, [user_id])
-    rows = cursor.fetchall()
-    avg_speed = rows[0][0]
-    speed["avg_speed"] = avg_speed
-    return_dict["speed"] = speed
-
-    #Get all distance data
-    query = """ SELECT DISTINCT ON (user_id)
-                user_id, distance, time
-                FROM shots S
-                WHERE S.user_id = %s
-                ORDER BY user_id, distance DESC, time;
-            """
-    cursor.execute(query, [user_id])
-    rows = cursor.fetchall()
-    max_distance = rows[0][1]
-    max_distance_time = rows[0][2]
-    distance = {}
-    distance["max_distance"] = max_distance
-    distance["max_distance_time"] = max_distance_time
-    query = """ SELECT AVG(distance)
-                FROM shots S
-                WHERE S.user_id = %s
-            """
-    cursor.execute(query, [user_id])
-    rows = cursor.fetchall()
-    avg_distance = rows[0][0]
-    distance["avg_distance"] = avg_distance
-    return_dict["distance"] = distance
-
-    # Get all hang time data
-    query = """ SELECT DISTINCT ON (user_id)
-                user_id, hang_time, time
-                FROM shots S
-                WHERE S.user_id = %s
-                ORDER BY user_id, hang_time DESC, time;
-            """
-    cursor.execute(query, [user_id])
-    rows = cursor.fetchall()
-    max_hang_time = rows[0][1]
-    max_hang_time_time = rows[0][2]
-    hang_time = {}
-    hang_time["max_hang_time"] = max_hang_time
-    hang_time["max_hang_time_time"] = max_hang_time_time
-    query = """ SELECT AVG(hang_time)
-                FROM shots S
-                WHERE S.user_id = %s
-            """
-    cursor.execute(query, [user_id])
-    rows = cursor.fetchall()
-    avg_hang_time = rows[0][0]
-    hang_time["avg_hang_time"] = avg_hang_time
-    return_dict["hang_time"] = hang_time
-
-    return JsonResponse(return_dict)
     
 
 # takes in user and number of shots you want
@@ -100,6 +21,8 @@ def get_shot_log(request, user_id, number):
     if request.method != 'GET':
         return HttpResponse(status=404)
     cursor = connection.cursor()
+    if user_id == 0:
+        return JsonResponse({'data': []})
     return_array = []
     query = """SELECT DISTINCT time, club, distance, launch_speed, launch_angle, hang_time
             FROM shots S
@@ -127,23 +50,35 @@ def get_user_last_shot(request, user_id):
     if request.method != 'GET':
         return HttpResponse(status=404)
     cursor = connection.cursor()
+
+    current_time = datetime.datetime.now() - datetime.timedelta(minutes=1)
+
     return_dict = {}
     query = """SELECT DISTINCT launch_angle, launch_speed, hang_time, distance, club, time
             FROM shots S
-            WHERE S.user_id = %s
+            WHERE S.user_id = %s AND S.time > %s
             ORDER BY time DESC
             LIMIT 1;
             """
 
-    cursor.execute(query,[user_id])
+    cursor.execute(query,(user_id, current_time))
     rows = cursor.fetchall()
 
-    return_dict["launch_angle"] = rows[0][0]
-    return_dict["launch_speed"] = rows[0][1]
-    return_dict["hang_time"] = rows[0][2]
-    return_dict["distance"] = rows[0][3]
-    return_dict["club"] = rows[0][4]
-    return_dict["time"] = rows[0][5]
+    if len(rows) == 0:
+        return_dict["launch_angle"] = "N/A"
+        return_dict["launch_speed"] = "N/A"
+        return_dict["hang_time"] ="N/A"
+        return_dict["distance"] = "N/A"
+        return_dict["club"] = "N/A"
+        return_dict["time"] = "N/A"
+    
+    else:
+        return_dict["launch_angle"] = rows[0][0]
+        return_dict["launch_speed"] = rows[0][1]
+        return_dict["hang_time"] = rows[0][2]
+        return_dict["distance"] = rows[0][3]
+        return_dict["club"] = rows[0][4]
+        return_dict["time"] = rows[0][5]
 
     return JsonResponse(return_dict)
 
@@ -151,11 +86,15 @@ def get_user_last_shot(request, user_id):
 @csrf_exempt
 def account_create(request):
     """Create account by adding username and password to DB."""
+    print("METHOD", request.method)
     if request.method != 'POST':
         return HttpResponse(status=400)
     
-    username = request.POST.get("username")
-    pwd = request.POST.get("password")
+    
+    username = request.GET.get("username")
+    pwd = request.GET.get("password")
+
+    print("Username, pwd", username, pwd)
 
     # Empty argument checking
     if not username or not pwd:
@@ -194,6 +133,8 @@ def account_create(request):
             """
     cursor.execute(query, (username, db_pwd, username))
     rows = cursor.fetchall()
+    if len(rows) == 0:
+        return HttpResponse(status=403)
     user_id = rows[0][0]
 
     return JsonResponse({'user_id': user_id})
@@ -205,8 +146,8 @@ def account_login(request):
     if request.method != 'POST':
         return HttpResponse(status=400)
 
-    username = request.POST.get("username")
-    pwd = request.POST.get("password")
+    username = request.GET.get("username")
+    pwd = request.GET.get("password")
 
     # Empty argument checking
     if not username or not pwd:
@@ -256,6 +197,9 @@ def post_shot(request):
     club = request.POST.get("club")
     hand = request.POST.get("hand")
 
+    if not user_id or not club or not hand:
+        return HttpResponse(status=403)
+
     # load the video if it exists. 
     #if request.FILES.get("video"):
     content = request.FILES["video"]
@@ -269,7 +213,7 @@ def post_shot(request):
     #data = get_shot_metrics(f"~/ACE/rangr/media/11647555259.3231792.mov/", hand)
     data = get_shot_metrics(f"{settings.MEDIA_ROOT}/{fname}", hand)
     if data['launch_speed'] == -1 or data['launch_angle'] == -1 or data['distance'] == -1 or data['hang_time'] == -1:
-        return HttpResponse(status=400)
+        return HttpResponse(status=401)
 
     launch_speed = float(data['launch_speed'])
     launch_angle = float(data['launch_angle'])
