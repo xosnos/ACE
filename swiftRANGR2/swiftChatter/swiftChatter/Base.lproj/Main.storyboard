@@ -132,15 +132,15 @@
                                     <action selector="pickWedge:" destination="xwS-CX-aIm" eventType="touchUpInside" id="SF2-i2-2zv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh3-o5-zR1" customClass="HighlightedButton">
-                                <rect key="frame" x="20" y="220" width="374" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJq-5Y-vQu" customClass="HighlightedButton" customModule="swiftChatter">
+                                <rect key="frame" x="20" y="222" width="374" height="68"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="Fc4-g7-adS"/>
+                                    <constraint firstAttribute="height" constant="68" id="5Uf-cy-lcd"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Driver" titleAlignment="center"/>
                                 <connections>
-                                    <action selector="pickDriver:" destination="xwS-CX-aIm" eventType="touchUpInside" id="Iat-Vn-mn7"/>
+                                    <action selector="pickDriver:" destination="xwS-CX-aIm" eventType="touchUpInside" id="5Fv-9Z-VCd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -149,16 +149,16 @@
                         <constraints>
                             <constraint firstItem="l6k-4v-7Sj" firstAttribute="leading" secondItem="oHd-zb-9FQ" secondAttribute="leading" constant="20" id="0F1-P3-B2S"/>
                             <constraint firstItem="wQQ-MC-h5v" firstAttribute="leading" secondItem="oHd-zb-9FQ" secondAttribute="leading" constant="20" id="2rh-ZJ-pxd"/>
-                            <constraint firstItem="oHd-zb-9FQ" firstAttribute="trailing" secondItem="oh3-o5-zR1" secondAttribute="trailing" constant="20" id="8mM-KZ-k6p"/>
                             <constraint firstItem="oHd-zb-9FQ" firstAttribute="trailing" secondItem="wQQ-MC-h5v" secondAttribute="trailing" constant="20" id="ERa-aU-DRa"/>
-                            <constraint firstItem="l6k-4v-7Sj" firstAttribute="top" secondItem="oh3-o5-zR1" secondAttribute="bottom" constant="42" id="GbI-ql-ymK"/>
-                            <constraint firstItem="oh3-o5-zR1" firstAttribute="leading" secondItem="oHd-zb-9FQ" secondAttribute="leading" constant="20" id="IRG-MC-Bfs"/>
-                            <constraint firstItem="oh3-o5-zR1" firstAttribute="top" secondItem="oHd-zb-9FQ" secondAttribute="top" constant="132" id="KAM-w8-5SV"/>
                             <constraint firstItem="wQQ-MC-h5v" firstAttribute="top" secondItem="olM-8N-5Yd" secondAttribute="bottom" constant="45" id="PxW-PJ-raY"/>
                             <constraint firstItem="oHd-zb-9FQ" firstAttribute="trailing" secondItem="olM-8N-5Yd" secondAttribute="trailing" constant="20" id="hbj-vt-fGv"/>
                             <constraint firstItem="olM-8N-5Yd" firstAttribute="top" secondItem="l6k-4v-7Sj" secondAttribute="bottom" constant="43" id="hiP-Qc-B1A"/>
                             <constraint firstItem="oHd-zb-9FQ" firstAttribute="trailing" secondItem="l6k-4v-7Sj" secondAttribute="trailing" constant="20" id="io3-5l-BCM"/>
+                            <constraint firstItem="oHd-zb-9FQ" firstAttribute="bottom" secondItem="wQQ-MC-h5v" secondAttribute="bottom" constant="191" id="kBQ-Gn-tME"/>
+                            <constraint firstItem="l6k-4v-7Sj" firstAttribute="top" secondItem="nJq-5Y-vQu" secondAttribute="bottom" constant="40" id="nDP-f7-a5k"/>
+                            <constraint firstItem="l6k-4v-7Sj" firstAttribute="trailing" secondItem="nJq-5Y-vQu" secondAttribute="trailing" id="rrx-aG-aJX"/>
                             <constraint firstItem="olM-8N-5Yd" firstAttribute="leading" secondItem="oHd-zb-9FQ" secondAttribute="leading" constant="20" id="soe-9z-RXf"/>
+                            <constraint firstItem="l6k-4v-7Sj" firstAttribute="leading" secondItem="nJq-5Y-vQu" secondAttribute="leading" id="umx-xH-Dc3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Club" id="fEa-gl-OLt"/>
@@ -202,7 +202,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-ru-7b9">
-                                <rect key="frame" x="187" y="151" width="36" height="21"/>
+                                <rect key="frame" x="187" y="151" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

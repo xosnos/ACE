@@ -19,8 +19,7 @@ class HighlightedButton: UIButton {
 
         if title != titleLabel?.text {
             isSelected = false
-            isHighlighted = false
-            backgroundColor = .blue
+            tintColor = .none
         }
     }
 }
