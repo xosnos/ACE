@@ -19,8 +19,7 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     private var videoUrl: URL?
     private var segueChecker = true
-    private var activeHand = "right"
-    private var activeClub = "driver"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if User.shared.loggedIn {

@@ -42,7 +42,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Right" titleAlignment="center"/>
                                 <connections>
-                                    <action selector="rightHand:" destination="mgx-li-1nV" eventType="touchUpInside" id="dEg-6A-sEJ"/>
                                     <action selector="rightHand:" destination="qgW-eb-hIP" eventType="touchUpInside" id="twP-Lf-nm3"/>
                                 </connections>
                             </button>
@@ -72,7 +71,6 @@
                     <navigationItem key="navigationItem" title="Select Handedness" id="hxQ-x4-hE0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqb-ph-ElV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="mgx-li-1nV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-459.4202898550725" y="-1418.3035714285713"/>
         </scene>
@@ -109,7 +107,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Wood" titleAlignment="center"/>
                                 <connections>
-                                    <action selector="pickWood:" destination="2mo-29-dN6" eventType="touchUpInside" id="4g8-7h-Ttb"/>
                                     <action selector="pickWood:" destination="xwS-CX-aIm" eventType="touchUpInside" id="5hn-Gp-6V0"/>
                                 </connections>
                             </button>
@@ -121,7 +118,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Iron" titleAlignment="center"/>
                                 <connections>
-                                    <action selector="pickIron:" destination="2mo-29-dN6" eventType="touchUpInside" id="aFN-45-qtz"/>
                                     <action selector="pickIron:" destination="xwS-CX-aIm" eventType="touchUpInside" id="mtE-Tc-d6C"/>
                                 </connections>
                             </button>
@@ -134,7 +130,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Wedge" titleAlignment="center"/>
                                 <connections>
                                     <action selector="pickWedge:" destination="xwS-CX-aIm" eventType="touchUpInside" id="SF2-i2-2zv"/>
-                                    <action selector="pickWedge:" destination="2mo-29-dN6" eventType="touchUpInside" id="pj4-Qp-AO6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh3-o5-zR1" customClass="HighlightedButton">
@@ -145,7 +140,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Driver" titleAlignment="center"/>
                                 <connections>
-                                    <action selector="pickDriver:" destination="2mo-29-dN6" eventType="touchUpInside" id="5pK-we-NkA"/>
                                     <action selector="pickDriver:" destination="xwS-CX-aIm" eventType="touchUpInside" id="Iat-Vn-mn7"/>
                                 </connections>
                             </button>
@@ -170,7 +164,6 @@
                     <navigationItem key="navigationItem" title="Select Club" id="fEa-gl-OLt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50d-1e-50C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="2mo-29-dN6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-439.13043478260875" y="-666.29464285714278"/>
         </scene>
