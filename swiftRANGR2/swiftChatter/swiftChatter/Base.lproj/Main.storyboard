@@ -445,7 +445,7 @@
             </objects>
             <point key="canvasLocation" x="-1429" y="64"/>
         </scene>
-        <!--LoginVC-->
+        <!--Item-->
         <scene sceneID="1IA-Hb-tY4">
             <objects>
                 <viewController id="hBA-Mv-UKl" customClass="LoginVC" customModule="swiftChatter" customModuleProvider="target" sceneMemberID="viewController">
@@ -505,7 +505,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Continue As Guest"/>
                                 <connections>
-                                    <segue destination="x2S-cU-IQS" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="Kw3-dZ-kpm"/>
+                                    <segue destination="x2S-cU-IQS" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Kw3-dZ-kpm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -534,6 +534,7 @@
                             <constraint firstItem="8bE-9c-Kf1" firstAttribute="top" secondItem="Eb8-iS-ZRp" secondAttribute="top" constant="92" id="vbv-xQ-9Iv"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="njK-r5-kwW"/>
                     <connections>
                         <outlet property="passwordField" destination="oo5-0d-nxm" id="xga-dA-KCK"/>
                         <outlet property="usernameField" destination="hLJ-yY-WmX" id="gjI-Ja-2tL"/>
@@ -547,6 +548,7 @@
         <scene sceneID="B7f-bX-xNR">
             <objects>
                 <tabBarController id="x2S-cU-IQS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vdV-v9-Pmy"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cZ3-ow-owF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

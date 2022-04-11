@@ -19,8 +19,7 @@ class LoginVC : UIViewController {
         let username = usernameField.text
         let password = passwordField.text
         if username != "" && password != "" {
-            User.shared.mockLogin(username!, password!) { success in
-//            User.shared.login(username!, password!) { success in
+            User.shared.login(username!, password!) { success in
                 DispatchQueue.main.async {
                     if success {
                         self.performSegue(withIdentifier: "loginSegue", sender: nil)
@@ -36,10 +35,8 @@ class LoginVC : UIViewController {
         let username = usernameField.text
         let password = passwordField.text
         if username != "" && password != "" {
-            User.shared.mockCreate(username!, password!)
-            self.performSegue(withIdentifier: "loginSegue", sender: nil)
-//            User.shared.create(username!, password!)
-//            onLogin(self)
+            User.shared.create(username!, password!)
+            onLogin(self)
         } else {
             print("Error: Username or password not filled in")
         }

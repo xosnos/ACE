@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 final class User {
     static let shared = User()
@@ -32,13 +33,13 @@ final class User {
     }
     
     func login(_ username: String, _ password: String, _ completion: ((Bool) -> ())?) {
-        guard let apiUrl = URL(string: serverUrl + "accounts/login/") else {
+        guard let apiUrl = URL(string: serverUrl + "accounts/login/?username=" + username + "&password=" + password) else {
             print("GET: Bad URL")
             return
         }
 
         var request = URLRequest(url: apiUrl)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
 
         URLSession.shared.dataTask(with: request) { data, response, error in
             var success = false
@@ -64,22 +65,12 @@ final class User {
     }
     
     func create(_ username: String, _ password: String) {
-        let jsonObj = ["username": username,
-                       "password": password]
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
-            print("POST: jsonData serialization error")
-            return
-        }
-                
-        guard let apiUrl = URL(string: serverUrl + "accounts/create/") else {
+        guard let apiUrl = URL(string: serverUrl + "accounts/create/?username=" + username + "&password=" + password) else {
             print("POST: Bad URL")
             return
         }
-        
         var request = URLRequest(url: apiUrl)
         request.httpMethod = "POST"
-        request.httpBody = jsonData
-
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let _ = data, error == nil else {
                 print("POST: NETWORKING ERROR")
