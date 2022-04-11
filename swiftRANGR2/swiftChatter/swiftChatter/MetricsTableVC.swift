@@ -44,7 +44,7 @@ final class MetricsTableVC: UITableViewController {
         cell.backgroundColor = (indexPath.row % 2 == 0) ? .systemGray5 : .systemGray6
         cell.timeStampLabel.text = metrics.timeStamp
         cell.clubLabel.text = "Club: \(metrics.club ?? "N/A")"
-        cell.launchAngleLabel.text = "Launch Angle: \(metrics.launchAngle ?? "N/A") deg"
+        cell.launchAngleLabel.text = "Launch Angle: \(metrics.launchAngle ?? "N/A") °"
         cell.launchSpeedLabel.text = "Lauch Speed: \(metrics.launchSpeed ?? "N/A") mph"
         cell.hangTimeLabel.text = "Hang Time: \(metrics.hangTime ?? "N/A") sec(s)"
         cell.distanceLabel.text = "Distance: \(metrics.distance ?? "N/A") yd(s)"
