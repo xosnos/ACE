@@ -29,8 +29,8 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         } else {
             SignInOutLabel.setTitle("Sign In", for: .normal)
         }
-        activeHand = User.shared.hand
-        activeClub = User.shared.club
+        activeHand.text = User.shared.hand
+        activeClub.text = User.shared.club
     }
     @IBAction func pickMedia(_ sender: Any) {
             presentPicker(.photoLibrary)

@@ -6,5 +6,7 @@ target 'swiftChatter' do
   use_frameworks!
 
   # Pods for swiftChatter
+  pod 'Alamofire'
+  pod 'SDWebImage'
 
 end

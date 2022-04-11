@@ -10,21 +10,21 @@ import UIKit
 final class HandVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
-    func didTapButton(title: String) {
+    func didTapButton(titleName: String) {
         for view in self.view.subviews as [UIView] {
             if let button = view as? HighlightedButton {
-                button.deselectButton(title)
+                button.deselectButton(title: titleName)
             }
         }
     }
     
     @IBAction func rightHand(_ sender: HighlightedButton) {
         User.shared.hand = "right"
-        didTapButton("Right")
+        didTapButton(titleName: "Right")
     }
     @IBAction func leftHand(_ sender: HighlightedButton) {
         User.shared.hand = "left"
-        didTapButton("Left")
+        didTapButton(titleName: "Left")
     }
     
 }

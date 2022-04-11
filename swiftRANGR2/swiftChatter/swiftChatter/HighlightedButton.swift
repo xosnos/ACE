@@ -18,7 +18,6 @@ class HighlightedButton: UIButton {
     func deselectButton(title: String) {
 
         if title != titleLabel?.text {
-            isEnabled = false
             isSelected = false
             isHighlighted = false
             backgroundColor = .blue
