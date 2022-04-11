@@ -34,38 +34,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-Hq-h89" customClass="HighlightedButton" customModule="swiftChatter">
-                                <rect key="frame" x="20" y="480" width="374" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4J-Fa-5ym" customClass="HighlightedButton" customModule="swiftChatter">
+                                <rect key="frame" x="20" y="314" width="374" height="68"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="yle-CY-xNf"/>
+                                    <constraint firstAttribute="height" constant="68" id="FcL-fJ-bkO"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Right" titleAlignment="center"/>
                                 <connections>
-                                    <action selector="rightHand:" destination="qgW-eb-hIP" eventType="touchUpInside" id="twP-Lf-nm3"/>
+                                    <action selector="rightHand:" destination="qgW-eb-hIP" eventType="touchUpInside" id="Wxn-v4-GXk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-A2-ixw" customClass="HighlightedButton" customModule="swiftChatter">
-                                <rect key="frame" x="20" y="337" width="374" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VG-qc-v1F" customClass="HighlightedButton" customModule="swiftChatter">
+                                <rect key="frame" x="20" y="491" width="374" height="68"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="eKi-wg-0fa"/>
+                                    <constraint firstAttribute="height" constant="68" id="dLI-AP-B4f"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Left" titleAlignment="center"/>
                                 <connections>
-                                    <action selector="leftHand:" destination="qgW-eb-hIP" eventType="touchUpInside" id="xzz-hp-GmQ"/>
+                                    <action selector="leftHand:" destination="qgW-eb-hIP" eventType="touchUpInside" id="Upg-Bh-59A"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pt4-f2-G3n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="S7o-Hq-h89" firstAttribute="leading" secondItem="pt4-f2-G3n" secondAttribute="leading" constant="20" id="CXW-Gl-c59"/>
-                            <constraint firstItem="S7o-Hq-h89" firstAttribute="top" secondItem="QU3-A2-ixw" secondAttribute="bottom" constant="75" id="Lp1-Yx-ZWn"/>
-                            <constraint firstItem="QU3-A2-ixw" firstAttribute="top" secondItem="pt4-f2-G3n" secondAttribute="top" constant="249" id="ilP-hZ-SyO"/>
-                            <constraint firstItem="pt4-f2-G3n" firstAttribute="trailing" secondItem="S7o-Hq-h89" secondAttribute="trailing" constant="20" id="lH7-d2-K8V"/>
-                            <constraint firstItem="pt4-f2-G3n" firstAttribute="trailing" secondItem="QU3-A2-ixw" secondAttribute="trailing" constant="20" id="uvT-20-O5E"/>
-                            <constraint firstItem="QU3-A2-ixw" firstAttribute="leading" secondItem="pt4-f2-G3n" secondAttribute="leading" constant="20" id="yjd-wg-iS8"/>
+                            <constraint firstItem="4VG-qc-v1F" firstAttribute="trailing" secondItem="w4J-Fa-5ym" secondAttribute="trailing" id="TCb-Tr-XmY"/>
+                            <constraint firstItem="4VG-qc-v1F" firstAttribute="trailing" secondItem="OAv-4h-967" secondAttribute="trailingMargin" id="TLv-Mp-914"/>
+                            <constraint firstItem="4VG-qc-v1F" firstAttribute="leading" secondItem="w4J-Fa-5ym" secondAttribute="leading" id="aMQ-JF-4aT"/>
+                            <constraint firstItem="w4J-Fa-5ym" firstAttribute="top" secondItem="pt4-f2-G3n" secondAttribute="top" constant="226" id="jZd-dg-sXr"/>
+                            <constraint firstItem="pt4-f2-G3n" firstAttribute="bottom" secondItem="4VG-qc-v1F" secondAttribute="bottom" constant="254" id="raF-hz-66C"/>
+                            <constraint firstItem="4VG-qc-v1F" firstAttribute="leading" secondItem="OAv-4h-967" secondAttribute="leadingMargin" id="uDb-I0-1wy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Handedness" id="hxQ-x4-hE0"/>

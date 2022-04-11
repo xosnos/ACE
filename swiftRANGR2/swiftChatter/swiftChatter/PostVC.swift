@@ -32,6 +32,11 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         activeHand.text = User.shared.hand
         activeClub.text = User.shared.club
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        activeHand.text = User.shared.hand
+        activeClub.text = User.shared.club
+    }
     @IBAction func pickMedia(_ sender: Any) {
             presentPicker(.photoLibrary)
         }
