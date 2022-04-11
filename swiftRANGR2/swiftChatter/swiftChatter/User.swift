@@ -17,21 +17,6 @@ final class User {
     
     private let serverUrl = "https://34.70.39.80/"
     
-    func mockLogin(_ username: String, _ password: String, _ completion: ((Bool) -> ())?) {
-        var success = false
-        defer { completion?(success) }
-        if username == "ace" && password == "golfer" {
-            self.userid = 1
-            self.loggedIn = true
-            success = true
-        }
-    }
-    
-    func mockCreate(_ username: String, _ password: String) {
-        self.userid = 7
-        self.loggedIn = true
-    }
-    
     func login(_ username: String, _ password: String, _ completion: ((Bool) -> ())?) {
         guard let apiUrl = URL(string: serverUrl + "accounts/login/?username=" + username + "&password=" + password) else {
             print("GET: Bad URL")

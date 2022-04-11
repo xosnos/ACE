@@ -8,6 +8,15 @@
 import UIKit
 
 final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    @IBOutlet weak var SignInOutLabel: UIBarButtonItem!
+    
+    @IBAction func SignInOut(_ sender: Any) {
+        User.shared.userid = 0
+    }
+    
+    
     private var videoUrl: URL?
     private var segueChecker = true
     private var activeHand = "right"

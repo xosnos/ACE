@@ -27,40 +27,40 @@ final class ChattStore {
     private let serverUrl = "https://34.70.39.80/"
     // Once you have your own back-end server set up, you will replace mobapp.eecs.umich.edu with your server’s IP address.
 
-    private let userid = User.shared.userid
+    
     
     func postChatt(_ chatt: Chatt) {
-            guard let apiUrl = URL(string: serverUrl+"post_shot/") else {
-                print("postChatt: Bad URL")
-                return
+        guard let apiUrl = URL(string: serverUrl+"post_shot/") else {
+            print("postChatt: Bad URL")
+            return
+        }
+        AF.upload(multipartFormData: { mpFD in
+            if let userid = chatt.userid?.data(using: .utf8) {
+                mpFD.append(userid, withName: "user_id")
             }
-            AF.upload(multipartFormData: { mpFD in
-                if let userid = chatt.userid?.data(using: .utf8) {
-                    mpFD.append(userid, withName: "user_id")
-                }
-                if let hand = chatt.hand?.data(using: .utf8) {
-                    mpFD.append(hand, withName: "hand")
-                }
-                if let club = chatt.club?.data(using: .utf8) {
-                    mpFD.append(club, withName: "club")
-                }
-                if let urlString = chatt.videoUrl, let videoUrl = URL(string: urlString) {
-                    mpFD.append(videoUrl, withName: "video", fileName: "chattVideo", mimeType: "video/mp4")
-                }
-            }, to: apiUrl, method: .post).response { response in
-                switch (response.result) {
-                case .success:
-                    print("postChatt: chatt posted!")
-                case .failure:
-                    print("postChatt: posting failed")
-                }
+            if let hand = chatt.hand?.data(using: .utf8) {
+                mpFD.append(hand, withName: "hand")
+            }
+            if let club = chatt.club?.data(using: .utf8) {
+                mpFD.append(club, withName: "club")
+            }
+            if let urlString = chatt.videoUrl, let videoUrl = URL(string: urlString) {
+                mpFD.append(videoUrl, withName: "video", fileName: "chattVideo", mimeType: "video/mp4")
+            }
+        }, to: apiUrl, method: .post).response { response in
+            switch (response.result) {
+            case .success:
+                print("postChatt: chatt posted!")
+            case .failure:
+                print("postChatt: posting failed")
             }
         }
+    }
 
     
 
     func getChatts(_ completion: ((Bool) -> ())?) {
-        guard let apiUrl = URL(string: serverUrl+"get_user_last_shot/"+String(userid)) else {
+        guard let apiUrl = URL(string: serverUrl+"get_user_last_shot/" + String(User.shared.userid)) else {
             print("getChatts: bad URL")
             return
         }
