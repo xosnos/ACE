@@ -16,6 +16,8 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         User.shared.loggedIn = false
     }
     
+    @IBOutlet weak var activeClub: UILabel!
+    @IBOutlet weak var activeHand: UILabel!
     
     private var videoUrl: URL?
     private var segueChecker = true
@@ -27,6 +29,8 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         } else {
             SignInOutLabel.setTitle("Sign In", for: .normal)
         }
+        activeHand = User.shared.hand
+        activeClub = User.shared.club
     }
     @IBAction func pickMedia(_ sender: Any) {
             presentPicker(.photoLibrary)

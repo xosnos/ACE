@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-Hq-h89" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-Hq-h89" customClass="HighlightedButton" customModule="swiftChatter">
                                 <rect key="frame" x="20" y="480" width="374" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="yle-CY-xNf"/>
@@ -45,7 +45,7 @@
                                     <action selector="rightHand:" destination="qgW-eb-hIP" eventType="touchUpInside" id="twP-Lf-nm3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-A2-ixw" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-A2-ixw" customClass="HighlightedButton" customModule="swiftChatter">
                                 <rect key="frame" x="20" y="337" width="374" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="eKi-wg-0fa"/>
@@ -99,7 +99,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6k-4v-7Sj" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6k-4v-7Sj" customClass="HighlightedButton" customModule="swiftChatter">
                                 <rect key="frame" x="20" y="330" width="374" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="cP6-Rx-ndF"/>
@@ -110,7 +110,7 @@
                                     <action selector="pickWood:" destination="xwS-CX-aIm" eventType="touchUpInside" id="5hn-Gp-6V0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olM-8N-5Yd" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olM-8N-5Yd" customClass="HighlightedButton" customModule="swiftChatter">
                                 <rect key="frame" x="20" y="441" width="374" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="cje-dn-vaJ"/>
@@ -121,7 +121,7 @@
                                     <action selector="pickIron:" destination="xwS-CX-aIm" eventType="touchUpInside" id="mtE-Tc-d6C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQQ-MC-h5v" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQQ-MC-h5v" customClass="HighlightedButton" customModule="swiftChatter">
                                 <rect key="frame" x="20" y="554" width="374" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="9WF-Da-id9"/>
@@ -194,6 +194,34 @@
                                     <segue destination="01y-qh-Jp0" kind="show" identifier="toMetrics" id="INv-vQ-c9e"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIC-eN-QDc">
+                                <rect key="frame" x="187" y="237" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-ru-7b9">
+                                <rect key="frame" x="187" y="151" width="36" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Isr-RY-RkX">
+                                <rect key="frame" x="37" y="151" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hand:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwe-dJ-T3N">
+                                <rect key="frame" x="37" y="237" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -225,6 +253,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="SignInOutLabel" destination="ERd-B4-td4" id="ois-Oc-DXc"/>
+                        <outlet property="activeClub" destination="5EJ-ru-7b9" id="3Zs-UH-uEJ"/>
+                        <outlet property="activeHand" destination="BIC-eN-QDc" id="kGA-Ua-LBi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -15,17 +15,13 @@ class HighlightedButton: UIButton {
         }
     }
     
-    var justTapped = false
-    
-    func deselectButton() {
+    func deselectButton(title: String) {
 
-        if !justTapped {
+        if title != titleLabel?.text {
             isEnabled = false
             isSelected = false
             isHighlighted = false
             backgroundColor = .blue
         }
-        
-        justTapped = false
     }
 }

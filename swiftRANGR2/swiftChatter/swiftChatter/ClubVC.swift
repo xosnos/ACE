@@ -10,33 +10,29 @@ import UIKit
 final class ClubVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
-    func didTapButton() {
+    func didTapButton(title: String) {
         for view in self.view.subviews as [UIView] {
             if let button = view as? HighlightedButton {
-                button.deselectButton()
+                button.deselectButton(title)
             }
         }
     }
     
     @IBAction func pickDriver(_ sender: HighlightedButton) {
         User.shared.club = "driver"
-        sender.justTapped = true
-        didTapButton()
+        didTapButton("Driver")
     }
     @IBAction func pickWood(_ sender: HighlightedButton) {
         User.shared.club = "wood"
-        sender.justTapped = true
-        didTapButton()
+        didTapButton("Wood")
     }
     @IBAction func pickIron(_ sender: HighlightedButton) {
         User.shared.club = "iron"
-        sender.justTapped = true
-        didTapButton()
+        didTapButton("Iron")
     }
     @IBAction func pickWedge(_ sender: HighlightedButton) {
         User.shared.club = "wedge"
-        sender.justTapped = true
-        didTapButton()
+        didTapButton("Wedge")
     }
     
 }
