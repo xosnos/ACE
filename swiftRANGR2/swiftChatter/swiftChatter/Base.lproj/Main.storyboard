@@ -29,16 +29,13 @@
         <!--Select Handedness-->
         <scene sceneID="le3-Ud-59B">
             <objects>
-                <viewController id="qgW-eb-hIP" sceneMemberID="viewController">
+                <viewController id="qgW-eb-hIP" customClass="HandVC" customModule="swiftChatter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OAv-4h-967">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-Hq-h89" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
                                 <rect key="frame" x="20" y="480" width="374" height="68"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" selected="YES"/>
-                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="yle-CY-xNf"/>
                                 </constraints>
@@ -46,6 +43,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Right" titleAlignment="center"/>
                                 <connections>
                                     <action selector="rightHand:" destination="mgx-li-1nV" eventType="touchUpInside" id="dEg-6A-sEJ"/>
+                                    <action selector="rightHand:" destination="qgW-eb-hIP" eventType="touchUpInside" id="twP-Lf-nm3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-A2-ixw" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
@@ -56,7 +54,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Left" titleAlignment="center"/>
                                 <connections>
-                                    <action selector="leftHand:" destination="mgx-li-1nV" eventType="touchUpInside" id="djA-UB-6LO"/>
+                                    <action selector="leftHand:" destination="qgW-eb-hIP" eventType="touchUpInside" id="xzz-hp-GmQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,7 +96,7 @@
         <!--Select Club-->
         <scene sceneID="5jd-Ih-Dx9">
             <objects>
-                <viewController id="xwS-CX-aIm" sceneMemberID="viewController">
+                <viewController id="xwS-CX-aIm" customClass="ClubVC" customModule="swiftChatter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J4R-ug-Co6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,6 +110,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Wood" titleAlignment="center"/>
                                 <connections>
                                     <action selector="pickWood:" destination="2mo-29-dN6" eventType="touchUpInside" id="4g8-7h-Ttb"/>
+                                    <action selector="pickWood:" destination="xwS-CX-aIm" eventType="touchUpInside" id="5hn-Gp-6V0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olM-8N-5Yd" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
@@ -123,6 +122,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Iron" titleAlignment="center"/>
                                 <connections>
                                     <action selector="pickIron:" destination="2mo-29-dN6" eventType="touchUpInside" id="aFN-45-qtz"/>
+                                    <action selector="pickIron:" destination="xwS-CX-aIm" eventType="touchUpInside" id="mtE-Tc-d6C"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQQ-MC-h5v" customClass="HighlightedButton" customModule="swiftChatter" customModuleProvider="target">
@@ -133,14 +133,12 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Wedge" titleAlignment="center"/>
                                 <connections>
+                                    <action selector="pickWedge:" destination="xwS-CX-aIm" eventType="touchUpInside" id="SF2-i2-2zv"/>
                                     <action selector="pickWedge:" destination="2mo-29-dN6" eventType="touchUpInside" id="pj4-Qp-AO6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh3-o5-zR1" customClass="HighlightedButton">
                                 <rect key="frame" x="20" y="220" width="374" height="68"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" selected="YES"/>
-                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="Fc4-g7-adS"/>
                                 </constraints>
@@ -148,6 +146,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Driver" titleAlignment="center"/>
                                 <connections>
                                     <action selector="pickDriver:" destination="2mo-29-dN6" eventType="touchUpInside" id="5pK-we-NkA"/>
+                                    <action selector="pickDriver:" destination="xwS-CX-aIm" eventType="touchUpInside" id="Iat-Vn-mn7"/>
                                 </connections>
                             </button>
                         </subviews>

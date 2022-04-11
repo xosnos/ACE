@@ -44,46 +44,6 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         }
     }
     
-    func didTapButton() {
-        for view in self.view.subviews as [UIView] {
-            if let button = view as? HighlightedButton {
-                button.deselectButton()
-            }
-        }
-    }
-    
-    @IBAction func pickDriver(_ sender: HighlightedButton) {
-        activeClub = "driver"
-        sender.justTapped = true
-        didTapButton()
-    }
-    @IBAction func pickWood(_ sender: HighlightedButton) {
-        activeClub = "wood"
-        sender.justTapped = true
-        didTapButton()
-    }
-    @IBAction func pickIron(_ sender: HighlightedButton) {
-        activeClub = "iron"
-        sender.justTapped = true
-        didTapButton()
-    }
-    @IBAction func pickWedge(_ sender: HighlightedButton) {
-        activeClub = "wedge"
-        sender.justTapped = true
-        didTapButton()
-    }
-    
-    @IBAction func rightHand(_ sender: HighlightedButton) {
-        activeHand = "right"
-        sender.justTapped = true
-        didTapButton()
-    }
-    @IBAction func leftHand(_ sender: HighlightedButton) {
-        activeHand = "left"
-        sender.justTapped = true
-        didTapButton()
-    }
-    
     private func presentPicker(_ sourceType: UIImagePickerController.SourceType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = sourceType
@@ -98,10 +58,10 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var messageTextView: UITextView!
     @IBAction func submitChatt(_ sender: Any) {
-        let chatt = Chatt(userid: "temp",
-                                  hand: activeHand,
-                                  club: activeClub,
-                                  videoUrl: videoUrl?.absoluteString)
+        let chatt = Chatt(userid: String(User.shared.userid),
+                            hand: String(User.shared.hand),
+                            club: String(User.shared.club),
+                        videoUrl: videoUrl?.absoluteString)
                 
         ChattStore.shared.postChatt(chatt)
 
@@ -111,10 +71,10 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBOutlet weak var postImage: UIImageView!
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
         videoUrl = info[UIImagePickerController.InfoKey.mediaURL] as? URL
-        let chatt = Chatt(userid: "temp",
-                                  hand: activeHand,
-                                  club: activeClub,
-                                  videoUrl: videoUrl?.absoluteString)
+        let chatt = Chatt(userid: String(User.shared.userid),
+                            hand: String(User.shared.hand),
+                            club: String(User.shared.club),
+                            videoUrl: videoUrl?.absoluteString)
                 
         ChattStore.shared.postChatt(chatt)
         // This is where the URL is stored, we need to send it to the backend

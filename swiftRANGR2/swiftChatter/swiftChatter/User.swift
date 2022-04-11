@@ -13,6 +13,8 @@ final class User {
     private init() {}
     
     var userid = 0
+    var hand = "right"
+    var club = "driver"
     var loggedIn = false
     
     private let serverUrl = "https://34.70.39.80/"
