@@ -86,7 +86,6 @@ def get_user_last_shot(request, user_id):
 @csrf_exempt
 def account_create(request):
     """Create account by adding username and password to DB."""
-    print("METHOD", request.method)
     if request.method != 'POST':
         return HttpResponse(status=400)
     
@@ -94,7 +93,6 @@ def account_create(request):
     username = request.GET.get("username")
     pwd = request.GET.get("password")
 
-    print("Username, pwd", username, pwd)
 
     # Empty argument checking
     if not username or not pwd:
@@ -188,7 +186,6 @@ def account_login(request):
 # post shot takes in a userid, hand, club, and a video file
 @csrf_exempt
 def post_shot(request):
-
     if request.method != 'POST':
         return HttpResponse(status=400)
 
@@ -277,8 +274,6 @@ def get_ball_points(filename, hand):
         radii.append(round(radius))
 
     ## obtain the x and y coordinates of the ball in motion
-    # for i in range(len(xs)):
-    #     print(xs[i], ys[i])
     # plot the ball path if we found at least 20 contours
     if len(xs) > 20 and hand == 'right':
         # look for a series of 3 points where y is increasing
@@ -322,7 +317,6 @@ def get_ball_points(filename, hand):
                 break
     # if we still haven't found a series of points, this video will not work
     if len(xs) > 20:
-        # print('no start point found')
         return -1
     # return points and minimum radius
     radii = min(radii)
@@ -395,7 +389,6 @@ def get_shot_metrics(filename, hand):
     x = points[0]
     y = points[1]
     radius = points[2]
-    # print(x, y , radius)
     # find unit of distance in one pixel
     pix_to_inches = (1.68 / 2) / radius
     # find the ball's launch angle using the first 2 points
