@@ -21,6 +21,7 @@ class HighlightedButton: UIButton {
 
         if !justTapped {
             isEnabled = false
+            isSelected = false
             isHighlighted = false
             backgroundColor = .blue
         }
