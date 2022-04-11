@@ -113,6 +113,7 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                 self.performSegue(withIdentifier: "toMetrics", sender: self)
             }
         }
+        
     }
     @IBOutlet weak var postImage: UIImageView!
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
@@ -123,6 +124,7 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                             videoUrl: videoUrl?.absoluteString)
                 
         self.postChatt(chatt)
+        self.performSegue(withIdentifier: "toCalc", sender: self)
         print("after chatt")
         
         // This is where the URL is stored, we need to send it to the backend

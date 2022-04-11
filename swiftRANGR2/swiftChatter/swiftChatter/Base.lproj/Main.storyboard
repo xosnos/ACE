@@ -255,6 +255,7 @@
                         <outlet property="activeClub" destination="5EJ-ru-7b9" id="3Zs-UH-uEJ"/>
                         <outlet property="activeHand" destination="BIC-eN-QDc" id="kGA-Ua-LBi"/>
                         <segue destination="01y-qh-Jp0" kind="show" identifier="toMetrics" id="93q-Fy-jdF"/>
+                        <segue destination="L6m-dc-yT1" kind="show" identifier="toCalc" id="yJq-MS-TZ5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -471,7 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXq-3K-xMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="508.69565217391306" y="63.616071428571423"/>
+            <point key="canvasLocation" x="1203" y="400"/>
         </scene>
         <!--Record-->
         <scene sceneID="gTI-RC-Tn8">
@@ -725,6 +726,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIB-d1-HXh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1409" y="903"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FRw-uy-gt1">
+            <objects>
+                <viewController id="L6m-dc-yT1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ff-uy-EOu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3a-VV-bZZ">
+                                <rect key="frame" x="164" y="395" width="101" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0iM-1I-b8M"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q1g-Sf-UJc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1g6-2Y-MXI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="369.56521739130437" y="-19.419642857142858"/>
         </scene>
     </scenes>
     <resources>
