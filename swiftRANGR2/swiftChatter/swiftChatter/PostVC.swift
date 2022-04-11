@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Alamofire
 
 final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    static let shared = PostVC()
+    private let serverUrl = "https://34.70.39.80/"
+    var jsonObject: [String: String] = [:]
     @IBOutlet weak var SignInOutLabel: UIButton!
     
     @IBAction func SignInOut(_ sender: Any) {
@@ -47,9 +50,9 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         } else {
             print("Camera not available. iPhone simulators don't simulate the camera.")
         }
-        if (segueChecker) {
-            self.performSegue(withIdentifier: "toMetrics", sender: self)
-        }
+//        if (segueChecker) {
+//            self.performSegue(withIdentifier: "toMetrics", sender: self)
+//        }
     }
     
     private func presentPicker(_ sourceType: UIImagePickerController.SourceType) {
@@ -65,17 +68,52 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var messageTextView: UITextView!
-    @IBAction func submitChatt(_ sender: Any) {
-        let chatt = Chatt(userid: String(User.shared.userid),
-                            hand: String(User.shared.hand),
-                            club: String(User.shared.club),
-                        videoUrl: videoUrl?.absoluteString)
-                
-        ChattStore.shared.postChatt(chatt)
-
-        dismiss(animated: true, completion: nil)
-    }
     
+    func changePage() {
+//        self.performSegue(withIdentifier: "toMetrics", sender: self)
+         print("here")
+        }
+    func postChatt(_ chatt: Chatt) {
+        guard let apiUrl = URL(string: serverUrl+"post_shot/") else {
+            print("postChatt: Bad URL")
+            return
+        }
+        
+        AF.upload(multipartFormData: { mpFD in
+            if let userid = chatt.userid?.data(using: .utf8) {
+                mpFD.append(userid, withName: "user_id")
+            }
+            if let hand = chatt.hand?.data(using: .utf8) {
+                mpFD.append(hand, withName: "hand")
+            }
+            if let club = chatt.club?.data(using: .utf8) {
+                mpFD.append(club, withName: "club")
+            }
+            if let urlString = chatt.videoUrl, let videoUrl = URL(string: urlString) {
+                mpFD.append(videoUrl, withName: "video", fileName: "chattVideo", mimeType: "video/mp4")
+            }
+        }, to: apiUrl, method: .post).responseJSON { response in
+            switch (response.result) {
+            case .success(let value):
+                
+                print("post return")
+                if let jsonObj = value as? [String: String] {
+                    User.shared.jsonObject = [
+                        "launch_angle": jsonObj["launch_angle"]!,
+                        "launch_speed": jsonObj["launch_speed"]!,
+                        "hang_time": jsonObj["hang_time"]!,
+                        "distance": jsonObj["distance"]!,
+                        "club": jsonObj["club"]!]
+                }
+                self.performSegue(withIdentifier: "toMetrics", sender: self)
+                
+            case .failure(let error):
+                print(error)
+                print("post failed")
+                self.performSegue(withIdentifier: "toMetrics", sender: self)
+            }
+        }
+    }
     @IBOutlet weak var postImage: UIImageView!
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
         videoUrl = info[UIImagePickerController.InfoKey.mediaURL] as? URL
@@ -84,7 +122,9 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                             club: String(User.shared.club),
                             videoUrl: videoUrl?.absoluteString)
                 
-        ChattStore.shared.postChatt(chatt)
+        self.postChatt(chatt)
+        print("after chatt")
+        
         // This is where the URL is stored, we need to send it to the backend
         picker.dismiss(animated: true, completion: nil)
     }
