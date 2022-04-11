@@ -11,7 +11,13 @@ class HighlightedButton: UIButton {
 
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? .red : .green
+            backgroundColor = isHighlighted ? .blue : .green
         }
+    }
+    
+    func deselectButton() {
+        isEnabled = false
+        isHighlighted = false
+        backgroundColor = .blue
     }
 }
