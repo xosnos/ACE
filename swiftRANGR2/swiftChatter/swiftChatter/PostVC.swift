@@ -45,36 +45,42 @@ final class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
     
     func didTapButton() {
-        for button in self.view.subviews as [UIView] {
-            if button is HighlightedButton {
+        for view in self.view.subviews as [UIView] {
+            if let button = view as? HighlightedButton {
                 button.deselectButton()
             }
         }
     }
     
-    @IBAction func pickDriver(_ sender: Any) {
+    @IBAction func pickDriver(_ sender: HighlightedButton) {
         activeClub = "driver"
+        sender.justTapped = true
         didTapButton()
     }
-    @IBAction func pickWood(_ sender: Any) {
+    @IBAction func pickWood(_ sender: HighlightedButton) {
         activeClub = "wood"
+        sender.justTapped = true
         didTapButton()
     }
-    @IBAction func pickIron(_ sender: Any) {
+    @IBAction func pickIron(_ sender: HighlightedButton) {
         activeClub = "iron"
+        sender.justTapped = true
         didTapButton()
     }
-    @IBAction func pickWedge(_ sender: Any) {
+    @IBAction func pickWedge(_ sender: HighlightedButton) {
         activeClub = "wedge"
+        sender.justTapped = true
         didTapButton()
     }
     
-    @IBAction func rightHand(_ sender: Any) {
+    @IBAction func rightHand(_ sender: HighlightedButton) {
         activeHand = "right"
+        sender.justTapped = true
         didTapButton()
     }
-    @IBAction func leftHand(_ sender: Any) {
+    @IBAction func leftHand(_ sender: HighlightedButton) {
         activeHand = "left"
+        sender.justTapped = true
         didTapButton()
     }
     

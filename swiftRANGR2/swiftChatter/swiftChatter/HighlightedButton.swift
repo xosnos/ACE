@@ -15,9 +15,16 @@ class HighlightedButton: UIButton {
         }
     }
     
+    var justTapped = false
+    
     func deselectButton() {
-        isEnabled = false
-        isHighlighted = false
-        backgroundColor = .blue
+
+        if !justTapped {
+            isEnabled = false
+            isHighlighted = false
+            backgroundColor = .blue
+        }
+        
+        justTapped = false
     }
 }
