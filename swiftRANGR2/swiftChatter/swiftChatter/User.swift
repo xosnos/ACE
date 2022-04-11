@@ -19,7 +19,7 @@ final class User {
     
     func login(_ username: String, _ password: String, _ completion: ((Bool) -> ())?) {
         guard let apiUrl = URL(string: serverUrl + "accounts/login/?username=" + username + "&password=" + password) else {
-            print("GET: Bad URL")
+            print("ACCOUNT LOGIN: Bad URL")
             return
         }
 
@@ -31,16 +31,16 @@ final class User {
             defer { completion?(success) }
 
             guard let data = data, error == nil else {
-                print("GET: NETWORKING ERROR")
+                print("ACCOUNT LOGIN: NETWORKING ERROR")
                 return
             }
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                print("GET: HTTP STATUS: \(httpStatus.statusCode)")
+                print("ACCOUNT LOGIN: HTTP STATUS: \(httpStatus.statusCode)")
                 return
             }
 
             guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Int] else {
-                print("GET: failed JSON deserialization")
+                print("ACCOUNT LOGIN: failed JSON deserialization")
                 return
             }
             self.userid = jsonObj["user_id"] ?? 0
@@ -51,18 +51,18 @@ final class User {
     
     func create(_ username: String, _ password: String) {
         guard let apiUrl = URL(string: serverUrl + "accounts/create/?username=" + username + "&password=" + password) else {
-            print("POST: Bad URL")
+            print("ACCOUNT CREATE: BAD URL")
             return
         }
         var request = URLRequest(url: apiUrl)
         request.httpMethod = "POST"
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let _ = data, error == nil else {
-                print("POST: NETWORKING ERROR")
+                print("ACCOUNT CREATE: NETWORKING ERROR")
                 return
             }
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                print("POST: HTTP STATUS: \(httpStatus.statusCode)")
+                print("ACCOUNT CREATE: HTTP STATUS: \(httpStatus.statusCode)")
                 return
             }
         }.resume()

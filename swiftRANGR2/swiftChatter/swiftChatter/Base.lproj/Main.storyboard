@@ -226,7 +226,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="SignInOutLabel" destination="6Fe-xk-dK8" id="I2j-M9-w0U"/>
+                        <outlet property="SignInOutLabel" destination="ERd-B4-td4" id="ois-Oc-DXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
