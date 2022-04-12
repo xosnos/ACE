@@ -210,12 +210,21 @@ def post_shot(request):
     #data = get_shot_metrics(f"~/ACE/rangr/media/11647555259.3231792.mov/", hand)
     data = get_shot_metrics(f"{settings.MEDIA_ROOT}/{fname}", hand)
     if data['launch_speed'] == -1 or data['launch_angle'] == -1 or data['distance'] == -1 or data['hang_time'] == -1:
-        return HttpResponse(status=401)
+        for key in data:
+            data[key] = 'N/A'
+        data['club'] = str(club)
+        data['hand'] = str(hand)
+        for i in data:
+            data[i] = str(data[i])
+
+        return JsonResponse(data)
+        # return HttpResponse(status=401)
 
     launch_speed = float(data['launch_speed'])
     launch_angle = float(data['launch_angle'])
     distance = float(data['distance'])
     hang_time = float(data['hang_time'])
+    
     
 
     # get the user id for the user
@@ -228,7 +237,11 @@ def post_shot(request):
             """
     cursor.execute(query, (user_id, launch_speed, launch_angle, hang_time, distance, club, hand))
 
-    return JsonResponse({})
+    data['club'] = str(club)
+    data['hand'] = str(hand)
+    for i in data:
+        data[i] = str(data[i])
+    return JsonResponse(data)
 
 
 # plot ball path
@@ -398,5 +411,5 @@ def get_shot_metrics(filename, hand):
     # find the distance traveled by the ball using all of the points and pix_to_inches
     metrics['hang_time'] = get_hang_time(metrics['launch_angle'], metrics['launch_speed'])
     # find the distance using hangtime, launch angle, and speed
-    metrics['distance'] = get_distance(metrics['hang_time'], metrics['launch_angle'], metrics['launch_speed'])
+    metrics["distance"] = get_distance(metrics['hang_time'], metrics['launch_angle'], metrics['launch_speed'])
     return metrics
