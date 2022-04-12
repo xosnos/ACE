@@ -424,7 +424,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W469A8F2E3;
+				DEVELOPMENT_TEAM = 525PNAGVRA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = swiftChatter/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "to record a video chatt";
@@ -442,7 +442,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich.ace-dev-team.RANGR";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich.ace-dev-team13.RANGR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -458,7 +458,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W469A8F2E3;
+				DEVELOPMENT_TEAM = 525PNAGVRA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = swiftChatter/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "to record a video chatt";
@@ -476,7 +476,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich.ace-dev-team.RANGR";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich.ace-dev-team13.RANGR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

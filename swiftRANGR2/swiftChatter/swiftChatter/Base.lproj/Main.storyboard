@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hBA-Mv-UKl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hBA-Mv-UKl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--Hand-->
         <scene sceneID="xgp-f4-vLo">
             <objects>
                 <navigationController id="S8H-b5-K0u" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" catalog="system" id="4UX-cF-4Gs"/>
+                    <tabBarItem key="tabBarItem" title="Hand" image="hand.raised.fill" catalog="system" id="4UX-cF-4Gs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z9Q-uY-a0C">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -78,7 +78,7 @@
         <scene sceneID="BN6-fp-P4W">
             <objects>
                 <navigationController id="VMb-dQ-HSV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Select Club" image="pin.fill" catalog="system" id="fWH-uk-ehS"/>
+                    <tabBarItem key="tabBarItem" title="Select Club" image="flag.fill" catalog="system" id="fWH-uk-ehS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QPb-8L-DGf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -791,9 +791,9 @@
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
-        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="flag.fill" catalog="system" width="128" height="121"/>
+        <image name="hand.raised.fill" catalog="system" width="128" height="124"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
-        <image name="pin.fill" catalog="system" width="119" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
