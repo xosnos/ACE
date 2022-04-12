@@ -386,7 +386,7 @@ def get_distance(hang, angle, speed):
     # convert distance from meters to yards
     distance = distance * 1.094
     # round distance to nearest yard
-    distance = round(distance)
+    distance = round(distance, 1)
     return distance
 
 
