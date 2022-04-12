@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 final class LastShotMetricsPage:UIViewController {
+    static let shared = LastShotMetricsPage()
 
     @IBOutlet weak var clubLabel: UILabel!
     @IBOutlet weak var clubTypeLabel: UILabel!
@@ -31,35 +32,27 @@ final class LastShotMetricsPage:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.makeGetRequest()
+        self.setValues()
     }
     
-    func makeGetRequest() {
-        ChattStore.shared.getChatts {
-            success in DispatchQueue.main.async {
-                if success {
-                    self.setValues()
-                } // if success
-            } // DispatchQueue
-        } // getChatts
-    } // func call
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
     
     func setValues() {
-        let metrics = ChattStore.shared.jsonObject
-        print(metrics)
+        let metrics = User.shared.jsonObject
+
         self.clubTypeLabel.text = metrics["club"] ?? "N/A"
         self.launchAngleLabelValue.text = metrics["launch_angle"] ?? "N/A"
         self.launchSpeedLabelValue.text = metrics["launch_speed"] ?? "N/A"
         self.hangTimeLabelValue.text = metrics["hang_time"] ?? "N/A"
         self.distanceLabelValue.text = metrics["distance"] ?? "N/A"
-
-//
-//        let hangTimeView = HangTimeView()
-//        hangTimeView.hangTimeLabel.text = metrics["hang_time"] ?? "N/A"
-//
-//        let distanceView = DistanceView()
-//        distanceView.distanceLabel.text = metrics["distance"] ?? "N/A"
+        
+        print("After Segue")
     }
+
     
 } // LastShotMetricsPage
 

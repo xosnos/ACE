@@ -17,6 +17,7 @@ final class ChattStore {
                                      // instances can be created
     let propertyNotifier = NotificationCenter.default
     let propertyName = NSNotification.Name("ChattStore")
+    var done = false
     var chatts = [Chatt]() {
         didSet {
             propertyNotifier.post(name: propertyName, object: nil)
@@ -29,33 +30,7 @@ final class ChattStore {
 
     
     
-    func postChatt(_ chatt: Chatt) {
-        guard let apiUrl = URL(string: serverUrl+"post_shot/") else {
-            print("postChatt: Bad URL")
-            return
-        }
-        AF.upload(multipartFormData: { mpFD in
-            if let userid = chatt.userid?.data(using: .utf8) {
-                mpFD.append(userid, withName: "user_id")
-            }
-            if let hand = chatt.hand?.data(using: .utf8) {
-                mpFD.append(hand, withName: "hand")
-            }
-            if let club = chatt.club?.data(using: .utf8) {
-                mpFD.append(club, withName: "club")
-            }
-            if let urlString = chatt.videoUrl, let videoUrl = URL(string: urlString) {
-                mpFD.append(videoUrl, withName: "video", fileName: "chattVideo", mimeType: "video/mp4")
-            }
-        }, to: apiUrl, method: .post).response { response in
-            switch (response.result) {
-            case .success:
-                print("postChatt: chatt posted!")
-            case .failure:
-                print("postChatt: posting failed")
-            }
-        }
-    }
+    
 
     
 

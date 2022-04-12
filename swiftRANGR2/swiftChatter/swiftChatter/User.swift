@@ -18,6 +18,7 @@ final class User {
     var loggedIn = false
     
     private let serverUrl = "https://34.70.39.80/"
+    var jsonObject: [String: String] = [:]
     
     func login(_ username: String, _ password: String, _ completion: ((Bool) -> ())?) {
         guard let apiUrl = URL(string: serverUrl + "accounts/login/?username=" + username + "&password=" + password) else {
