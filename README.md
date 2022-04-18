@@ -1,22 +1,12 @@
-# ACE
+# UM EECS441§3&4 W22 ACE
 
-### Backend Setup
-`ssh -i eecs441.pem ubuntu@34.70.39.80`
-Connects to the server
+| Demo  |  Wiki |  Trello  |
+|:-----:|:-----:|:--------:|
+|[<img src="https://eecs441.eecs.umich.edu/img/admin/video.png">][demo_page]|[<img src="https://eecs441.eecs.umich.edu/img/admin/wiki.png">][wiki_page]|[<img src="https://eecs441.eecs.umich.edu/img/admin/trello.png">][process_page]|
 
-Database is called rangrdb. Has tables `users` and `shots`
+![Elevator Pitch]()
+![Team]()
 
-use `sudo -u postgres psql` to connect
-
-`users` table looks like:
-
-| username(varchar 255)| user_id (int) |
-| -------------        |:-------------:|
-| testuser             | 1             |
-
-
-`shots` table looks like:
-
-|user_id (int)  | launch_angle (decimal)| launch_speed (decimal)| hang_time (decimal)| distance (decimal)| shot_id (int) | time (timestamp)             |
-|:-------------:|:---------------------:|:---------------------:|:------------------:|:-----------------:|:-------------:|:----------------------------:|
-|      1        |                  14.1 |                  26.5 |                4.8 |             151.6 |             1 | 2022-03-17 06:38:00.942947   |
+[demo_page]: https://youtu.be/sample
+[wiki_page]: https://github.com/member/team/wiki
+[process_page]: https://trello.com/b/sample/general
